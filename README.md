@@ -58,16 +58,16 @@ asigna un valor al operando de la izquierda basado en el valor del operando de l
 ```
     Asignación: 	                                        x = y           significa:	x = y
     Asignación de adición: 	                                x += y          significa:	x = x + y
-    Asignación de sustracción :	                            x -= y          significa:	x = x - y
+    Asignación de sustracción:	                                x -= y          significa:	x = x - y
     Asignación de multiplicación: 	                        x *= y          significa:	x = x * y
-    Asignación de división: 	                            x /= y          significa:	x = x / y
+    Asignación de división: 	                                x /= y          significa:	x = x / y
     Asignación de Resto: 	                                x %= y          significa:	x = x % y
     Asignación de exponenciación: 	                        x **= y         significa:	x = x ** y
     Asignación de desplazamiento a la izquierda: 	        x <<= y         significa:	x = x << y
-    Asignación de desplazamiento a la derecha: 	            x >>= y         significa:  x = x >> y
-    Asignación sin signo de desplazamiento a la derecha:    x >>>= y        significa:	x = x >>> y
-    Asignacion AND: 	                                    x &= y          significa:	x = x & y
-    Asignacion XOR: 	                                    x ^= y          significa:	x = x ^ y
+    Asignación de desplazamiento a la derecha: 	                x >>= y         significa:  x = x >> y
+    Asignación sin signo de desplazamiento a la derecha:        x >>>= y        significa:	x = x >>> y
+    Asignacion AND: 	                                        x &= y          significa:	x = x & y
+    Asignacion XOR: 	                                        x ^= y          significa:	x = x ^ y
     Asignacion OR: 	                                        x |= y          significa:	x = x | y
 ```
 ### Operadores Aritmeticos: 
@@ -107,7 +107,7 @@ Los **operadores logicos** nos devuelven un resultado a partir de que se cumpla 
 nos permite unir String mediante el signo **'+'**, tambien podemos concatenar numero a un string, en cuando JS detecta un string concatena todo lo demas.
 - **oncat()** : metodo especifico reservado para los String que nos permite concatenarle cualquier otro valor: -> *let saludo = bienvendio.concat(nombre);*
 - **${}** : es una expresion que nos permite concatenar texto y variables, para ello se utiliza `` ejemplo:
-```
+```javascript
     let nombre = "Roberto";
     let frase = `soy ${nombre} y estoy estudiando`;
 ```
@@ -119,7 +119,7 @@ Es un estilo de escritura en el cual cada palabra se escribe con la primera letr
 Es una sentencia que nos permite ejecutar un fragmento de codigo unicamente si se cumple una **condicion**.
 Para ello tenemos los siguientes condicionales:
 - **if**: condicional que solo ejecuta el codigo que contiene si la condicion que se le indica es True:
-```
+```javascript
     let nombre = "Roberto";
     let apellido = "Jofre";
     let edad = 26;
@@ -129,4 +129,4 @@ Para ello tenemos los siguientes condicionales:
     }
 ```
 
-    **else** condicional que depende de **if** que ejecuta un bloque de codigo en caso de que if sea false
+- **else** condicional que depende de **if** que ejecuta un bloque de codigo en caso de que if sea false
