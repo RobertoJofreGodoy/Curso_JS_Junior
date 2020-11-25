@@ -24,18 +24,18 @@ Otros usos no tan comunes:
 
 # VARIABLES
 Una variable es un espacio que guardamos en memoria
- **string** = "cade de texto"
+ **string** = "cadena de texto"
  **number** = 123
  **boolean** =  true / false
 
 Podemos declarar una variable de 3 maneras diferentes:
-    - **var**: definimos una variable y esta se puede utilizar en cualquier momento, se recomienda no utilizar.
-    - **let**: declara una variable que se encuentra limitada a su bloque. No es lo mismo Delcarar una variable o Inicializar una variable, podemos declarar una variable de la siguiente manera:
-        *let numero;*   -> estamos indicando que existe una variable con un alcanze regional (al ser let)
-        *numero = 123;*   -> aqui estamos Inicializando la variable al introducirle un valor
-    - **const**: delcaramos una variable que siempre mantendra su valor
-        -> const nombre = "Roberto"
-            Const no se puede Declarar sin Inicializar
+ - **var**: definimos una variable y esta se puede utilizar en cualquier momento, se recomienda no utilizar.
+ - **let**: declara una variable que se encuentra limitada a su bloque. No es lo mismo Delcarar una variable o Inicializar una variable, podemos declarar una variable de la siguiente manera:
+    *let numero;*   -> estamos indicando que existe una variable con un alcanze regional (al ser let)
+    *numero = 123;*   -> aqui estamos Inicializando la variable al introducirle un valor
+ - **const**: delcaramos una variable que siempre mantendra su valor
+    -> const nombre = "Roberto"
+    Const no se puede Declarar sin Inicializar
 
 Casos especiales de Datos donde la variable no esta definida o hay un error:
  - **Undefined**: tipo de dato que retorna cuando una variable existe pero no esta Inicializada.
@@ -112,21 +112,21 @@ nos permite unir String mediante el signo **'+'**, tambien podemos concatenar nu
     let frase = `soy ${nombre} y estoy estudiando`;
 ```
 ## Camel Case
-Es un estilo de escritura en el cual cada palabra se escribe con la primera letra en mayusculas (exceptuando la primera palabra de todas) y eliminando los espacios de una frase **camelCase**, ejemplo: *esteEsElNombreDeUnavariable*
+Es un estilo de escritura en el cual cada palabra se escribe con la primera letra en mayusculas (exceptuando la primera palabra de todas) y eliminando los espacios de una frase **camelCase**, ejemplo: *esteEsElNombreDeUnaVariable*
 **JS** trabaja con **camelCase**, por ejemplo: *document.getElementById()*
 
 ## Condicionales
 Es una sentencia que nos permite ejecutar un fragmento de codigo unicamente si se cumple una **condicion**.
 Para ello tenemos los siguientes condicionales:
-    **if**: condicional que solo ejecuta el codigo que contiene si la condicion que se le indica es True:
-    ```javascript
-        let nombre = "Roberto";
-        let apellido = "Jofre";
-        let edad = 26;
+- **if**: condicional que solo ejecuta el codigo que contiene si la condicion que se le indica es True:
+```
+    let nombre = "Roberto";
+    let apellido = "Jofre";
+    let edad = 26;
 
-        if(edad === 26){
-            alert(`Hola ${nombre} ${apellido}! tienes ${edad} `);
-        }
-    ```
+    if(edad === 26){
+        alert(`Hola ${nombre} ${apellido}! tienes ${edad} `);
+    }
+```
 
     **else** condicional que depende de **if** que ejecuta un bloque de codigo en caso de que if sea false
