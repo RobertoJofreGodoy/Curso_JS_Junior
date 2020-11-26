@@ -156,7 +156,7 @@ Para ello tenemos los siguientes condicionales:
         alert(`Hola ${nombre}, no tienes 27, tienes ${edad} años`);
     };
 ```
-### PROBLEMA DE COFLA:
+### PROBLEMA DE COFLA CAPITULO 1:
 #### PROBLEMA Nº 1
 3 chicos de 23 años entran a una heladeria a comprar, pero los precios no estan al lado de cada estante con su respectivo helado, ellos quieren comprar el helado mas caro posible con el dinero que tienen.
 Cada uno tiene distitnas cantidades de dinero, y hay una tabla en la que podemos basarnos para saber el costo de cada helado.
@@ -328,14 +328,14 @@ Esto nos mostrara *Perro Gato Tigre*.
 
     }
 ```
-En el anterior codigo asociamos el primer **for** a un label llamado **forLabel**, como podemos ver tenemos un segundo *for* dentro que recorre otra Array, este *for8 contiene un **break**, este *break* detendria la ejecucion de este segundo *for*, sin embargo le estamos pasando el **label** que hace referencia al primer ciclo  **forLabel**, por lo tanto el **break** detiene toda la ejecucion.
+En el anterior codigo asociamos el primer **for** a un label llamado **forLabel**, como podemos ver tenemos un segundo *for* dentro que recorre otra Array, este *for* contiene un **break**, este *break* detendria la ejecucion de este segundo *for*, sin embargo le estamos pasando el **label** que hace referencia al primer ciclo  **forLabel**, por lo tanto el **break** detiene toda la ejecucion.
 
 ## Funciones
 ### Definicion
 Una funcion es una porcion de codigo al que se le asgina un identificador, para poder llamarla cuando se la necesite.
 Para ello tenemos una palabra reservada **function()**, a la que le podemos asignar un nombre *function saludar()*.
 Function() tambien nos permite exigir un parametro para que funcione.
-NOTA: las function() tienen un **Scope** global, podemos acceder a ellas desde cualquier parte, pero sus variables internas tienen un **Scpope** regional.
+NOTA: las function() tienen un **Scope** global, podemos acceder a ellas desde cualquier parte, pero sus variables internas tienen un **Scope** regional.
 ```javascript
     let Roberto ={
     nombre: 'Roberto',
@@ -416,3 +416,19 @@ Las Arrow Function tienen varias ventajas:
     //VS
     const saludarArrow = nombre => `Hola ${nombre}!`;
 ```
+
+### PROBLEMA DE COFLA CAPITULO 2:
+#### PROBLEMA Nº 1
+EL Homeless al que Cofla le regalo plata, se gano la loteria. Este Señor decide hacer una fiesta! compró una máquina que deja pasar solamente a los mayores de edad:
+- Dejar pasar solo a los mayores de edad (+18).
+- La primera persona en entre despues de las 2 AM, no paga.
+
+#### PROBLEMA Nº 2
+Cofla se mete a estudiar, en su curso son 19 alumnos en total, pero se rompio el registro de asistencia, por los proximos 30 dias no se podra hacer registro de ningun tipo
+- Crear un mini sistema que nos permita registrar a los alumnos que estan Presentes (p) y Ausentes (a)
+- Pasados 30 dias, mostrar la situacion final del Alumno
+- Se puede tener un maximo del 10% de ausencias por semestre, si se tinen mas, aclarar que el Alumno esta reprovado
+
+#### PROBLEMA Nº 3
+Cofla vuelve a su casa con muchas tareas de calculo, por lo que debemos crear una calculadora para ayudar a Cofla:
+- Crear calculadora
