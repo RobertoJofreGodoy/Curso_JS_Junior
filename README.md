@@ -183,10 +183,8 @@ Crear soluciones:
 Cofla no compra un carajo y decide darle ese dinero a un homeless que a su vez compra un boleto de loteria:
 - Si le alcanza para uno, lo compra.
 - si le alcanza para 2, compra los 2.
-- si le alncanza para tres y le sobra, compra 2 y regala el vuelto.
+- si le alcanza para tres y le sobra, compra 2 y regala el vuelto.
 - debe mostrarse en pantalla los boletos que compro y el vuelto.
-
-##### Datos
 
 #### PROBLEMA Nº 3
 Cofla es sospechoso de un delito y es detenido, en comisaria lo conectan a un detector de mentiras para saber si Cofla dice la verdad.
@@ -194,7 +192,6 @@ Cofla es sospechoso de un delito y es detenido, en comisaria lo conectan a un de
 - Si no miente, no hacer nada.
 - Si el aparato no se decide, aclarar que la pregunta debe ser mas especifica.
 
-##### Datos
 
 # Capitulo 2: ARRAYS
 ### Definicion y como crearlos
@@ -334,3 +331,88 @@ Esto nos mostrara *Perro Gato Tigre*.
 En el anterior codigo asociamos el primer **for** a un label llamado **forLabel**, como podemos ver tenemos un segundo *for* dentro que recorre otra Array, este *for8 contiene un **break**, este *break* detendria la ejecucion de este segundo *for*, sin embargo le estamos pasando el **label** que hace referencia al primer ciclo  **forLabel**, por lo tanto el **break** detiene toda la ejecucion.
 
 ## Funciones
+### Definicion
+Una funcion es una porcion de codigo al que se le asgina un identificador, para poder llamarla cuando se la necesite.
+Para ello tenemos una palabra reservada **function()**, a la que le podemos asignar un nombre *function saludar()*.
+Function() tambien nos permite exigir un parametro para que funcione.
+NOTA: las function() tienen un **Scope** global, podemos acceder a ellas desde cualquier parte, pero sus variables internas tienen un **Scpope** regional.
+```javascript
+    let Roberto ={
+    nombre: 'Roberto',
+    apellido: 'Jofre',
+    edad: 26
+    }
+
+    function MayorEdad(persona) {
+        console.log(`${persona.nombre} es:`);
+        
+        if (persona.edad >= 18) {
+            console.log('mayor de edad');
+        }else{
+            console.log('menor de edad');
+        }
+    }
+
+    MayorEdad(Roberto)
+```
+
+### Return
+el return nos devuelve un valor, un tipo de dato, independientemente de lo que la funtion misma pueda mostrar u hacer en su ejecucion, ejemplo:
+```javascript
+    function saludar(){
+        alert("Hola"); /*al ejecutarse la function() se monstrata este alert, pero este no es el valor final de la function()*/
+        return "la funcion se ejecuto correctamente"; /*con return tenemos un valor, en este caso un String que es el resultado de la ejecucion de function()*/
+    }
+
+    let saludo = function(); /*Podemos crear una variable que ejecute la function() y guarde su resultado*/
+
+    document.write(saludo); /*Lo que nos permite mostrar que la function() se ejcuto correctamente independientemente de que el alert se haya ejecutado*/
+```
+Cuando una *function()* retorna un valor se finaliza la *function()*, funciona igual que un *break*.
+
+### Parametros
+Los parametros son valores que podemos darle una *function()* para que esta trabaje con esos valores y retorne un resultado diferente segun el valor que se le haya pasado.
+```javascript
+    function suma(num1, num2){ /*funtion() nos permite declarar variables con un Scope limitado a la function()*/
+        let resultado = num1 + num2;
+        return resultado; 
+    }
+
+    let suma1 = suma(12,14); //ahora podemos llamar la 'function suma()' inicializando sus variables y guardnado el resultado en una variable externa
+    let suma2 = suma(1,4);
+    let suma3 = suma(2,8);
+
+    document.write(`los reusltados son: ${suma1}, ${suma2} y ${suma3}`);
+```
+
+### Arrow Function
+tenemos mas de una sintaxis para crear function():
+```javascript
+    const saludar = function(nombre){ //Podemos asignar una function() a una Constante
+        let frase = `Hola ${nombre}!`;
+        document.write(frase);
+    }
+
+    const saludarArrow = (nombre)=>{ //con Arrow Functions reemplazamos la palabra 'function' por '=>' y lo colocamos despues de los parametros.
+        let frase = `Hola ${nombre}!`;
+        document.write(frase);
+    }
+
+    saludar("Roberto");
+    saludarArrow("karina");
+```
+Las Arrow Function tienen varias ventajas:
+- Si solo hay un parametro, se puede colocar sin parentesis:
+```javascript
+    const saludarArrow = (nombre)=>{}
+    //VS
+    const saludarArrow = nombre =>{}
+```
+- Si solo contienen una expresion (una linea de codigo) no es necesario colocar las llaves '{}' ni return:
+```javascript
+    const saludarArrow = nombre =>{
+        return `Hola ${nombre}!`
+    }
+    //VS
+    const saludarArrow = nombre => `Hola ${nombre}!`;
+```
