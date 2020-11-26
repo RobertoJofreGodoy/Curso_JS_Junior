@@ -1,7 +1,7 @@
 # Curso_JS_Junior
 ¿Que es JavaScript?
 - Lenguaje Interpretado
-- Orientado de Objetos: 
+- Orientado de Objetos 
 - Imperativo
 - Case sensitive (Upper and Lower Case)
 - Basado en prototipos / Instancias / Classless
@@ -24,23 +24,23 @@ Otros usos no tan comunes:
 
 # Capitulo 1: VARIABLES
 Una variable es un espacio que guardamos en memoria
- **string** = "cadena de texto"
- **number** = 123
- **boolean** =  true / false
+- **string** = "cadena de texto"
+- **number** = 123
+- **boolean** =  true / false
 
 Podemos declarar una variable de 3 maneras diferentes:
  - **var**: definimos una variable y esta se puede utilizar en cualquier momento, se recomienda no utilizar.
- - **let**: declara una variable que se encuentra limitada a su bloque. No es lo mismo Delcarar una variable o Inicializar una variable, podemos declarar una variable de la siguiente manera:
+ - **let**: declara una variable que se encuentra limitada a su bloque. No es lo mismo **Declarar** una variable o **Inicializar** una variable, podemos declarar una variable de la siguiente manera:
     *let numero;*   -> estamos indicando que existe una variable con un alcanze regional (al ser let)
     *numero = 123;*   -> aqui estamos Inicializando la variable al introducirle un valor
  - **const**: delcaramos una variable que siempre mantendra su valor
     -> const nombre = "Roberto"
-    Const no se puede Declarar sin Inicializar
+    ***Const* no se puede Declarar sin Inicializar**
 
 Casos especiales de Datos donde la variable no esta definida o hay un error:
  - **Undefined**: tipo de dato que retorna cuando una variable existe pero no esta Inicializada.
- - **Null**: es un valor vacio o nulo
- - **Nan**: 'Not a Number' valor que nos devulve JS cuando intentamos realizar alguna operacion matematica con variables que no es un numero
+ - **Null**: es un valor vacio o nulo.
+ - **Nan**: *'Not a Number'* valor que nos devulve JS cuando intentamos realizar alguna operacion matematica con variables que no son un numero
 
 ## SCOPE: 
 El scope de una variable hace referencia al lugar donde esta va a vivir , o podrá ser accesible. Podríamos decir también que scope es el alcance que determina la accesibilidad de las variables en cada parte de nuestro código.
@@ -48,6 +48,7 @@ El scope de una variable hace referencia al lugar donde esta va a vivir , o podr
 ## Hoisting: 
 concepto que trata sobre como un programa puede verse afectado por la creacion y la ejecucion
 
+## Prompt
 Prompt: funcion de JS que nos permite almacenar un valor indicado por el usuario
     *let nombre = prompt("como te llamas?");*
 el valor indicado quedara almacenado en la variable por lo que podremos trabajar con el
@@ -64,7 +65,7 @@ asigna un valor al operando de la izquierda basado en el valor del operando de l
     Asignación de Resto: 	                                x %= y          significa:	x = x % y
     Asignación de exponenciación: 	                        x **= y         significa:	x = x ** y
     Asignación de desplazamiento a la izquierda: 	        x <<= y         significa:	x = x << y
-    Asignación de desplazamiento a la derecha: 	                x >>= y             significa:  x = x >> y
+    Asignación de desplazamiento a la derecha: 	                x >>= y           significa:  x = x >> y
     Asignación sin signo de desplazamiento a la derecha:        x >>>= y        significa:	x = x >>> y
     Asignacion AND: 	                                        x &= y          significa:	x = x & y
     Asignacion XOR: 	                                        x ^= y          significa:	x = x ^ y
@@ -104,7 +105,7 @@ Los **operadores logicos** nos devuelven un resultado a partir de que se cumpla 
  !   -> Not
 ```
 ## Concatenacion: 
-nos permite unir String mediante el signo **'+'**, tambien podemos concatenar numero a un string, en cuando JS detecta un string concatena todo lo demas.
+nos permite unir String mediante el signo **'+'**, tambien podemos concatenar numero a un string, en cuanto JS detecta un string concatena todo lo demas.
 - **concat()** : metodo especifico reservado para los String que nos permite concatenarle cualquier otro valor: -> *let saludo = bienvendio.concat(nombre);*
 - **${}** : es una expresion que nos permite concatenar texto y variables, para ello se utiliza `` ejemplo:
 ```javascript
@@ -197,7 +198,7 @@ Cofla es sospechoso de un delito y es detenido, en comisaria lo conectan a un de
 
 # Capitulo 2: ARRAYS
 ### Definicion y como crearlos
-Un Array es un conjunto de datos asociados a un indice
+Un Array es un conjunto de datos asociados a un indice.
 Como crear un Array:
 ```javascript
     let frutas = ["manzana", "platano", "pera"];
@@ -218,7 +219,118 @@ ejemplo:
         os: "Windows 10"
     };
 ```
-En este caso, creamos un objeto *computer* que tiene las propiedades *cpu, gpu, ram, ssd y os*, esto nos permite llamar una propiedad en especifico del objeto, sin tener que saber su posicion exacta:
+En este caso, creamos un objeto *computer* que tiene las propiedades *cpu, gpu, ram, ssd y os*, esto nos permite llamar una propiedad en especifico del objeto, sin tener que conocer su posicion exacta:
 ```javascript
     document.write(computer["gpu"]);
 ```
+
+## Bucles de Iteracion
+un Bucle se repite constanstemente hasta que cumplen la condicion que se le indica
+
+- **while** : Ejecuta en bluque uno bloque de codigo siempre y cuando la condicion sea *True*, el pogramara no seguira su flujo hasta que la condicion sea *false*:
+```javascript
+    let numero = 0;
+    while(numero<10){
+        document.write(numero);
+        numero++;
+    }
+```
+- **do while** : Primero ejecuta un bloque de codigo y despues pregunta la condicion, repetira el bloque de codigo hasta que la condicion sea *false*. Esto es util en caso de que queramos que el bloque de codigo se ejecuta por lo menos 1 vez.
+```javascript
+    let numero = 0;
+
+    do {
+        document.write(numero);
+        numero++;
+    }
+    while(numero<10)
+```
+
+- **break** :Es una sentencia que nos permite detener la ejecucion de un Bucle:
+```javascript
+    let numero = 0;
+
+    while(numero<10){
+        document.write(numero);
+        numero++;
+        if (numero == 10){
+            break;
+        }
+    }
+```
+- **for** :Es un Bucle que se repetira el numero de veces que nosotros le indiquemos, **for** se compone de 3 partes:
+    - **declaracion e inicializamos**: por regla general se declara una variable **i** (index)
+    - **Condicion**: al igual que **while** el bucle se va a ejecutar mientras la condicion se cumpla, sea *true*, se utiliza la mima variable previamente *declarada* **i**.
+    - **iteramos**: Definimos si la variable **i** se aumenta o decrementa, esto se ejecuta despues de que el bloque de codigo termine.
+
+    ```javascript
+        for (let i = 0; i < 6 ; i++) {
+            document.write(i + "<br>");
+        }
+
+        for (let i = 6; i >= 0 ; i--) {
+            document.write(i + "<br>");
+        }
+    ```
+
+- **continue** : Sentencia parecida a **break** que nos permite "saltarnos" una iteracion de un Bucle y que despues este se siga ejecutando:
+EL siguietne Bucle mostrara los numero del 0 al 19, pero no el 12 devido a que se corto esa iteracion con **continue**
+```javascript
+        for (let i = 0; i < 20 ; i++) {
+            if (i == 12){
+                continue;
+            }
+            document.write(i + "<br>");
+        }
+```
+
+- **for in** : Se utiliza para recorrer un **Array**, **for in** nos devuelve el indice de los elementos:
+```javascript
+    let animales = ["Perro", "Gato", "Tigre"]
+
+    for (animal in animales){
+        document.write(animal + " ");
+    }
+```
+Este Codigo nos monstrara *0 1 2* que son los Indeces del Array, si queremos que nos muestre su contenido:
+```javascript
+    let animales = ["Perro", "Gato", "Tigre"]
+
+    for (animal in animales){
+        document.write(animales[animal] + " ");
+    }
+```
+Ahora nos mostrara *Perro Gato Tigre*.
+
+- **for of** : Funciona de la igual menera que *for in* sin embargo nos devuelve automaticamente el contendido del **Array**
+```javascript
+    Slet animales = ["Perro", "Gato", "Tigre"]
+
+    for (animal of animales){
+        document.write(animal + " ");
+    }
+
+```
+Esto nos mostrara *Perro Gato Tigre*.
+
+- **label** : Sentencia que nos permite asociar un **Bucle** a un **Nombre**:
+```javascript
+    let array1 = ["Maria","Karina","Valentina"];
+    let array2 = ["Roberto", "Carlos", array1,"Felipe"];
+
+    forLabel:
+    for (let array in array2){
+        if (array == 2){
+            for (let array of array1){
+                document.write(array + " ");
+                break forLabel;
+            }
+        } else {
+            document.write(array2[array] + " ");
+        }
+
+    }
+```
+En el anterior codigo asociamos el primer **for** a un label llamado **forLabel**, como podemos ver tenemos un segundo *for* dentro que recorre otra Array, este *for8 contiene un **break**, este *break* detendria la ejecucion de este segundo *for*, sin embargo le estamos pasando el **label** que hace referencia al primer ciclo  **forLabel**, por lo tanto el **break** detiene toda la ejecucion.
+
+## Funciones
