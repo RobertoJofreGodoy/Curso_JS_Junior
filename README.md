@@ -67,7 +67,7 @@ asigna un valor al operando de la izquierda basado en el valor del operando de l
     Asignación de Resto: 	                                x %= y          significa:	x = x % y
     Asignación de exponenciación: 	                        x **= y         significa:	x = x ** y
     Asignación de desplazamiento a la izquierda: 	        x <<= y         significa:	x = x << y
-    Asignación de desplazamiento a la derecha: 	                x >>= y          significa:   x = x >> y
+    Asignación de desplazamiento a la derecha: 	                x >>= y         significa:      x = x >> y
     Asignación sin signo de desplazamiento a la derecha:        x >>>= y        significa:	x = x >>> y
     Asignacion AND: 	                                        x &= y          significa:	x = x & y
     Asignacion XOR: 	                                        x ^= y          significa:	x = x ^ y
