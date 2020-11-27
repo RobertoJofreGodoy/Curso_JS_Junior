@@ -338,7 +338,7 @@ En el anterior código asociamos el primer **for** a un label llamado **forLabel
 
 ## Funciones
 ### Definición
-Una función es una porciñon de código al que se le asgina un identificador, para poder llamarla cuando se la necesite.
+Una función es una porción de código al que se le asgina un identificador, para poder llamarla cuando se la necesite.
 Para ello tenemos una palabra reservada **function()**, a la que le podemos asignar un nombre *function **saludar()***.
 Function() tambien nos permite exigir un parámetro para que funcione.
 NOTA: las function() tienen un **Scope** global, podemos acceder a ellas desde cualquier parte, pero sus variables internas tienen un **Scope** regional.
@@ -503,7 +503,7 @@ Como ya vismo **this** hace referencia al **Objeto** con lo que podemos acceder 
     gato.saludar();
     pajaro.saludar();
 ```
-## Caracteristicas de la POO
+## Características de la POO
 ### Abstracción
 La Abstraccion tiene como objetivo intentar reducir lo mas posible un Objeto, tanto en sus **atributos** como en sus **métodos**
 
@@ -552,12 +552,12 @@ Podemos crear un *objeto perro* que utilice el **método** *saludar()* indicado 
 
     //Pero un Objeto creado con la clase 'animal' no puede utilizar los métodos de la clase 'perro'
     const gato = new animal("gato", 7, "blanco");
-    gato.ladrar(); //Esto dara un Error
+    gato.ladrar(); //Esto dará un Error
 ```
 
 ### Métodos estáticos
 Un Método estático es un método que NO necesita que la clase se defina para poder ser creado.
-Para ello utilizaremos la plabfra reservada **static** al momento de crear el método, esto **SOLO funciona si el método NO utiliza ningun Atributo de la clase**.
+Para ello utilizaremos la palabra reservada **static** al momento de crear el método, esto **SÓLO funciona si el método NO utiliza ningun Atributo de la clase**.
 ```js
     class perro extends animal{
         constructor(especie, edad, color, raza){
@@ -578,7 +578,7 @@ Con esto, **podemos utilizar el método *ladrar()* sin la necesidad de instancia
 - **getters**: métodos para obtener un valor.
 - **setters**: métodos para modificar o definir un valor.
 
-En la mayoria de los lenguajes, los getters y setters se utilizan para acceder a propiedades provadas, en caso de JS, a datos encapsulados.
+En la mayoria de los lenguajes, los getters y setters se utilizan para acceder a propiedades privadas, en caso de JS, a datos encapsulados.
 
 Vamos a crear un **método Setter** que modifique la *raza* de los perros, para ello utilizamos la palabra reservada **set**:
 ```js
@@ -592,7 +592,7 @@ Vamos a crear un **método Setter** que modifique la *raza* de los perros, para 
         }
     }
 ```
-Para llamar a los **métodos setter** se hace de manera diferente a los otros métodos, en este caso no se usa la expresion *setRaza()*, sino que se le debe asignar un valor como si fuera una propiedad:
+Para llamar a los **métodos setter** se hace de manera diferente a los otros métodos, en este caso no se usa la expresión *setRaza()*, sino que se le debe asignar un valor como si fuera una propiedad:
 ```js
     perroPastorAleman.setRaza = "Doberman"; //No se utiliza *setRaza()*
 
@@ -614,7 +614,13 @@ Ahora crearemos un **método Getter** que nos permita obtener la *raza* de un pe
         }
     }
 ```
-Ahora podemos saber que de que *raza* es un perro utilizando un **método Getter**.
+Ahora podemos saber de qué *raza* es un perro utilizando un **método Getter**.
 ```js
     document.write(perroPastorAleman.getRaza);
 ```
+### PROBLEMA DE COFLA CAPITULO 3:
+#### PROBLEMA Nº 1
+Cofla va a una tienda a comprarse un celular, de todos los modelos de la tienda a Cofla el llamaron la atención 3 modelos espcíficamente. El problema es que ningún vendedor sabe mada... por lo que tendremos que ayudar a Cofla a elegir un celular mostrandole las caracterisicas de cada uno.
+- Crear un sistema para mostrarle a Cofla las particularidades de los 3 celulares.
+- Cada celular debe tener color, peso, resolución de pantalla, resolución de cámara y memoria ram.
+- Cada celular debe poder encender, apagar, tomar fotos y grabar. 
