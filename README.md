@@ -432,3 +432,76 @@ Cofla se mete a estudiar, en su curso son 19 alumnos en total, pero se rompio el
 #### PROBLEMA Nº 3
 Cofla vuelve a su casa con muchas tareas de calculo, por lo que debemos crear una calculadora para ayudar a Cofla:
 - Crear calculadora
+
+# Capitulo 3: Pogramacion Orientada a Objetos
+los objetos tienen 2 conceptos, 
+- caracterisisticas o cualidades: altura, color, marca...
+- funcionalidades o metodos: encender, apagar, acelerar...
+
+la POO es un paradigma de la programacion que nos facilita las cosas al utilizar la logica que utilizariamos en la vida real.
+
+### Conceptos Basicos de POO
+- **Clase**: la plantilla que creamos para poder fabricar objetos.
+- **Objeto**: Es el resultado de una clase
+- **Atributo**: las caracteristicas que tiene el Objeto, sus propiedades.
+- **Metodo**: Son las cosas que puede hacer nuestro Objeto
+- **Constructor**: funcion obligatoria que debe tener cada clase, este Constructor, nos va a construir las propiedades de los Objetos.
+- **Instanciacion**: 
+
+## Crear una clase
+Vamos a crear la clase animal, a la que podremos indicarle la especie, la edad y el color del animal que creemos despues.
+Como dijismos, obligatoriamente una clase necesita un **constructor**, al que le pasaremos los parametros del animal, estos parametros de momento no son mas que variables sin ningun valor almacenado.
+Dentro del **constructor** utilizaremos la palabra reservada **this** que hace referencia al objeto (que todavia no existe), lo que decimos con esto es lo siguiente: this.especie (el objeto tendra un atributo llamado especie) = especie (le pasamos el valor que indiquemos al paremetro especie).
+```js
+    class animal {
+        constructor(especie, edad, color){
+            this.especie = especie;
+            this.edad = edad;
+            this.color = color;
+        }
+    }
+```
+Ahora, podemos construir diferentes Animales con los **Atributos** que indicamos en la **Clase**.
+Nota: Los objetos idealmente deben ser creados como **Constantes**.
+```js
+    const perro = new animal("Quiltro", 5, "negro");
+    const gato = new animal("gato", 7, "blanco");
+    const pajaro = new animal("aguila", 2, "marron");
+```
+Tenemos 3 animales de diferentes especies, edades y colores, y podemos acceder a la informacion de cada de la siguiente manera:
+Nota: es como utilizar **this.atributo**, solo que sustituimos **this** por el nombre del **Objeto**.
+```js
+    document.write(perro.color);
+    document.write(gato.edad);
+    document.write(pajaro.especie);
+```
+## Agregar Metodos
+Para agregar un metodo a una clase, utilizamos la sintaxis de una funcion (no Arrow function) dentro de la clase, despues del contructor.
+Vamos a agregar el metodo saludar() que permitira que cualquiera de los Animales que hemos creado se pueda presentar:
+```js
+    class animal {
+    constructor(especie, edad, color){
+        this.especie = especie;
+        this.edad = edad;
+        this.color = color;
+    };
+
+    saludar(){
+        document.write(`Hola! soy un ${this.especie}, soy de color ${this.color} y tengo ${this.edad} años :D` );
+    }
+}
+```
+Como ya vismo **this** hace referencia al **Objeto**, y podemos acceder a sus atributos, para llamar a este metodo hacemos lo siguiente:
+```js
+    perro.saludar();
+    gato.saludar();
+    pajaro.saludar();
+```
+
+## Abtraccion
+
+
+## Modularidad
+
+
+## Jerarquia
