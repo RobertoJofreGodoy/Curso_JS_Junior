@@ -635,3 +635,119 @@ Cofla ya tiene su nuevo celular, ahora está mirando las apps de Play Store ya q
 - Crear un sistema que ayude a Cofla a decidir cual app descargar.
 - La información de los instaladores debe contener la cantidad de descargas, la puntuación y su peso.
 - Las Apps se deben poder Instalar, abrir, cerrar y desisntalar.
+
+# Capitulo 4: Métodos de Cadena, Métodos de Arrays y Objeto Math.
+## Métodos de Cadena
+Los **Métodos de Cadena** nos permite modificar, concatenar, validar... cadenas de texto, para ello JS tiene los siguientes métodos:
+- **concat()**: junta dos o más cadenas y retorna una nueva:
+```js
+    let cadena = `cadena de prueba `;
+    let cadena2 = "cadena de prueba 2";
+    let resultado = cadena.concat(cadena2); 
+
+    document.write(resultado);
+``` 
+
+- **startsWith()**: Si una cadena comienza con los caracteres de otra cadena, devuelve *true* sino *false*.
+```js
+    let cadena = `cadena de prueba `;
+    let cadena2 = "cadena";
+    let resultado = cadena.startsWith(cadena2); //esto es True
+```
+- **endsWith()**: si una cadena termina con los caracteres de otra cadena, devuelve *true* sino *false*.
+```js
+    let cadena = `cadena de prueba `;
+    let cadena2 = "cadena";
+    let cadena3 = "prueba "
+    let resultado = cadena.endsWith(cadena2); //esto es False
+    let resultado2 = cadena.endsWith(cadena3); //esto es True
+```
+- **includes()**: si una cadena puede encontrarse dentro de otra cadena, devuelve *true* sino *false*, independientemente si se encuentra al inicio o la final.
+```js
+    let cadena = `cadena de prueba `;
+    let cadena2 = "cadena";
+    let cadena3 = "de"
+    let resultado = cadena.includes(cadena2); //true
+    let resultado2 = cadena.includes(cadena3); //true
+    let resultado3 = cadena.includes("hola"); //false
+```
+- **indexOf()**: Devuelve el indice del primer caracter de la cadena, si no existe, devuelve -1.
+```js
+    let cadena = `Estoy estudiando con Dalto`;
+    let cadena2 = "estudiando";
+    let resultado = cadena.indexOf(cadena2); //En este caso el resultado es 6, debido a que la primera letra de "estudiando" en "cadena" se enceuntra en la posicion nº 6
+
+    let resultado = cadena.indexOf("Hola"); //como no se encuentra en "cadena", devuelve -1
+```
+
+- **lastIndexOf()**: Devuelve el último indice del primer caracter de la cadena, si no existe, devuelve -1.
+```js
+    let cadena = `Estoy estudiando con Dalto Dalto Dalto Dalto Dalto Dalto`;
+    let cadena2 = "Dalto";
+    let resultado = cadena.lastIndexOf(cadena2); //resultado es 51, es la posición del primer carácter, del ultimo "Dalto".
+```
+
+- **padStart()**: [Propuesta de ECMA] - rellenar cadena al principio con los caracteres deseados.
+    Este metodod requiere de 2 valores:
+    - valor 1: el **largo Total** que queremos que tenga la cadena.
+    - valor 2: Con qué vamos a rellenar la cadena hasta que alcanze el **largo Total**.
+```js
+    let cadena = `Estoy estudiando con Dalto`;
+    let resultado = cadena.padStart(30, "123"); //colocará "123" repetidamente al Inicio hasta que la variable "cadena" tenga un largo Total de 30 caracteres.
+```
+- **padEnd()**: [Propuesta de ECMA] - Funciona de igual manera que *padStart* pero rellenar la cadena al final con los caracteres deseados.
+```js
+    let cadena = `Estoy estudiando con Dalto`;
+    let resultado = cadena.padEnd(30, "123"); //colocará "123" repetidamente al Final hasta que la variable "cadena" tenga un largo Total de 30 caracteres.
+```
+- **repeat()**: Devuelve la misma cadena pero repetida la cantidad de veces que queremos.
+```js
+    let cadena = `123 `;
+    let resultado = cadena.repeat(3); //repetirá 3 veces "cadena"
+```
+
+- **split()**: Divide la cadena como le pidamos.
+```js
+    let cadena = `Hola como estas?`;
+    let resultado = cadena.split(" "); //La cadena se va a dividir cada vez que encuentre un espacio
+    //En este caso estariamos creando un Array "resultado" con los valores ["Hola","como","estas?"]
+
+    document.write(resultado[0]); //Hola
+    document.write(resultado[1]); //como
+    document.write(resultado[2]); //estas?
+```
+- **substring()**: Crea una nuevo String y nos retorna un pedazo de la cadena que seleccionamos.
+    **substring()** no se escribe con **camelCase** devido a que es solo una palabra.
+    Este método nos permite pasarle 2 parametros, el indice de donde empieza y el indice de donde termina (excluyendo este último.)
+```js
+    let cadena = `ABCDEFGHIJKLMNÑOPQRSTUVWXYZ`;
+    let resultado = cadena.substring(0,4); //Creamos un nuevo String que contiene ABCD, debido a que empeiza en la posición 0 de "cadena" y termine en la posicón 4, pero este último no lo incluye. 
+    document.write(resultado);
+```
+- **toLowerCase()**: Convierte una cadena a minúscula.
+```js
+    let cadena = `ABCDEFGHIJKLMNÑOPQRSTUVWXYZ`;
+    let resultado = cadena.toLowerCase(); 
+    document.write(resultado);
+```
+- **toUpperCase()**: Convierte una cadena a mayúsculas.
+```js
+    let cadena = `Hola todo el mundo, como estamos?`;
+    let resultado = cadena.toUpperCase(); 
+    document.write(resultado);
+```
+- **toString()**: Método que devuelve una cadena que representa al objeto especificado.
+```js
+    let cadena = 123456789;
+    let resultado = cadena.toString(); //convierte a String un dato de otro tipo
+```
+- **trim()**: Elimina los espacios en blanco al principio y al final de la cadena.
+```js
+    let cadena = "       roberto      ";
+    document.write(cadena.length); //el largo de "cadena" es de 20 caracteres.
+    let resultado = cadena.trim(); //Eliminamos los espacios en blanco del principio y el final.
+    document.write(resultado.length); //el largo de "resultado" es de 7 caracteres.
+```
+- **trimEnd()**:  Elimina los espacios en blanco al final de una cadena.
+- **trimStart()**: Elimina los espacios en blanco al comienzo de una cadena.
+- **valueOf()**: retorna el valor primitivo de un objeto string
