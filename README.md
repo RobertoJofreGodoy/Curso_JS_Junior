@@ -55,7 +55,7 @@ Concepto que trata sobre como un programa puede verse afectado por el orden de l
 ## Prompt
 Prompt: función de JS que nos permite almacenar un valor indicado por el usuario
 ```js
-    let nombre = prompt("como te llamas?");
+    let nombre = prompt("¿cómo te llamas?");
 ```
 el valor indicado quedará almacenado en la variable, por lo que podremos trabajar con él.
 
@@ -442,7 +442,7 @@ Cofla vuelve a su casa con muchas tareas de calculo, por lo que debemos crear un
 # Capitulo 3: Pogramación Orientada a Objetos
 los objetos tienen 2 conceptos, 
 - **Atributos**: caracterisisticas o cualidades: altura, color, marca...
-- **Metodos**: funcionalidades o métodos: encender, apagar, acelerar...
+- **métodos**: funcionalidades o métodos: encender, apagar, acelerar...
 
 la POO es un paradigma de la programacion que nos facilita las cosas al utilizar la lógica que utilizariamos en la vida real.
 
@@ -518,8 +518,8 @@ Consiste en la capacidad de un Objeto para comportarse de menera distinta ante e
 
 ## Herencia
 La herencia se basa en crear un clase hija que tome todas las propiedades de la clase Padre, pero pudiendo agregarle cosas nuevas.
-Por ejmeplo, tenemos la clase *animal*, y queremos agregarle el **método** de *ladrar()*, pero no todos los animales ladran, solo los perros.
-Por lo que vamos a crear una **clase hija** de la clase *animal* que herede sus **Atributos** principales, pero a la que podremos agregarle nuevos atributos y nuevos **métodos**.
+Por ejemplo, tenemos la clase *animal*, y queremos agregarle el **método** de *ladrar()*, pero no todos los animales ladran.
+Por lo que vamos a crear una **clase hija** de la clase *animal* que **herede sus Atributos** principales, pero a la que podremos agregarle nuevos atributos y nuevos **métodos**.
 Esto lo hacemos con la palabra reservada **extend**.
 ```js
     class animal {
@@ -547,8 +547,8 @@ Ahora tenemos una **Clase** capaz de crear **Objetos** *perro* heredando todas l
 Podemos crear un *objeto perro* que utilice el **método** *saludar()* indicado en la clase *animal*.
 ```js
     const perroPastorAleman = new perro("Perro", 5, "negro", "Pastor Aleman");
-    perroPastorAleman.saludar(); //metodo creado en la clase 'animal'
-    perroPastorAleman.ladrar(); //metodo creado en la clase 'perro'
+    perroPastorAleman.saludar(); //método creado en la clase 'animal'
+    perroPastorAleman.ladrar(); //método creado en la clase 'perro'
 
     //Pero un Objeto creado con la clase 'animal' no puede utilizar los métodos de la clase 'perro'
     const gato = new animal("gato", 7, "blanco");
@@ -605,7 +605,7 @@ Ahora crearemos un **método Getter** que nos permita obtener la *raza* de un pe
             super(especie, edad, color);
             this.raza = raza;
         }
-        set modificarRaza(newraza){
+        set setRaza(newraza){
             this.raza = newraza;
         }
 
@@ -662,7 +662,7 @@ Los **Métodos de Cadena** nos permite modificar, concatenar, validar... cadenas
     let resultado = cadena.endsWith(cadena2); //esto es False
     let resultado2 = cadena.endsWith(cadena3); //esto es True
 ```
-- **includes()**: si una cadena puede encontrarse dentro de otra cadena, devuelve *true* sino *false*, independientemente si se encuentra al inicio o la final.
+- **includes()**: si una cadena puede encontrarse dentro de otra cadena, devuelve *true* sino *false*, independientemente si se encuentra al inicio o al final.
 ```js
     let cadena = `cadena de prueba `;
     let cadena2 = "cadena";
@@ -688,7 +688,7 @@ Los **Métodos de Cadena** nos permite modificar, concatenar, validar... cadenas
 ```
 
 - **padStart()**: [Propuesta de ECMA] - rellenar cadena al principio con los caracteres deseados.
-    Este metodod requiere de 2 valores:
+    Este método requiere de 2 valores:
     - valor 1: el **largo Total** que queremos que tenga la cadena.
     - valor 2: Con qué vamos a rellenar la cadena hasta que alcanze el **largo Total**.
 ```js
@@ -721,7 +721,7 @@ Los **Métodos de Cadena** nos permite modificar, concatenar, validar... cadenas
     Este método nos permite pasarle 2 parámetros, el indice de donde empieza y el indice de donde termina (excluyendo este último.)
 ```js
     let cadena = `ABCDEFGHIJKLMNÑOPQRSTUVWXYZ`;
-    let resultado = cadena.substring(0,4); //Creamos un nuevo String que contiene ABCD, debido a que empeiza en la posición 0 de "cadena" y termine en la posicón 4, pero este último no lo incluye. 
+    let resultado = cadena.substring(0,4); //Creamos un nuevo String que contiene ABCD, debido a que empieza en la posición 0 de "cadena" y termine en la posicón 4, pero este último no lo incluye. 
     document.write(resultado);
 ```
 - **toLowerCase()**: Convierte una cadena a minúscula.
@@ -772,19 +772,13 @@ Los Transformadores son **métodos que modifican el Array**.
     document.write(resultado); //Nos muestra el elemento eliminado
     document.write(nombres); //Vemos el Array sin el elemento eliminado por "shift()"
 ```
-- **push()**: Método que agrega un elemento al Array al final de la lista.
+- **push()**: Método que agrega uno o más elementos al final del Array.
 ```js
     let nombres = ["Roberto", "karina", "Mona"];
     let resultado = nombres.push("Emy","Nico"); //Agregamos "Emy" y "Nico" al final del Array
 
     document.write(resultado); //Nos devuelve la cantidad de elementos que ahora tiene el Array
     document.write(nombres);  //Vemos el Array con los nuevos elementos al final
-```
-- **reverse()**: Método que invierte el ordem de los elementos de un Array
-```js
-    let nombres = [1,2,3,4,5,6,7,8];
-    nombres.reverse(); //invertimos el orden del Array, y esta se modifica
-    document.write(nombres); //Vemos el Array invertido
 ```
 - **unshift()**: Método que agrega uno o más elementos al inicio del Array y devuelve la nueva longitud del Array
 ```js
@@ -793,6 +787,12 @@ Los Transformadores son **métodos que modifican el Array**.
 
     document.write(nombres);   //Vemos el Array con los nuevos elementos al principio
     document.write(resultado); //Nos devuelve la cantidad de elementos que contiene el Array
+```
+- **reverse()**: Método que invierte el orden de los elementos de un Array
+```js
+    let nombres = [1,2,3,4,5,6,7,8];
+    nombres.reverse(); //invertimos el orden del Array, y esta se modifica
+    document.write(nombres); //Vemos el Array invertido
 ```
 - **sort()**: Método que ordena los elementos de un Array localmente y devuelve el arreglo ordenado. Se basa en el orden lexicográfico.
 **NOTA**: Solo tiene en cuenta el primer carácter de los números, ejemplo, si tenemos *let numero = [ 1,45,5,74,98 ]* el método *sort* ordenará los numero de la siguiente manera: *[ 1,45,5,74,98 ]*
@@ -815,14 +815,15 @@ Los Transformadores son **métodos que modifican el Array**.
     let nombres = ["Roberto", "karina", "Mona"];
     nombres.splice(1,2,"Emy","Nico"); //Eliminamos 2 elementos a partir del índice 1, y agregamos 2 más
     nombres.splice(0,0,"Emy","Nico") //Aqui estariamos agrgando los elementos nuevos al principio sin eliminar nada.
-    nombres.splice(-1,0,"Emy","Nico") /*agregamos los elementos nuevos al final sin eliminar nada, 
-    SIN EMBARGO, el último elemnto del Array Original quedará después de los elementos agregados de esta manera, 
-    es decir, el último elemento sefuirá siendo el último. La forma de referirse al final de un Array es con "-1". 
+    nombres.splice(-1,0,"Emy","Nico") /*La forma de referirse al final de un Array es con "-1".
+    Agregamos los elementos nuevos al final sin eliminar nada, 
+    SIN EMBARGO, el último elemento del Array Original quedará después de los elementos agregados, 
+    es decir, el último elemento seguirá siendo el último.  
     Pero para este caso lo mejor es utilizar "push()"*/
 ```
 
 ### Accesores
-Los Métodos Accesores no modifican el Array original, sino que crean uno nuevo que contenga los datos a los que nosotros queremos acceder.
+Los Métodos Accesores no modifican el Array original, sino que **crean un nuevo Array** que contenga los datos a los que nosotros queremos acceder.
 - **join()**: Método que une todos los elementos de una matriz (u objeto similar) en un **String** y la devuelve.
     Este método nos permite indicar un elemento separador:
 ```js
@@ -831,9 +832,9 @@ Los Métodos Accesores no modifican el Array original, sino que crean uno nuevo 
 
     document.write(resultado); // Veremos "Roberto - karina - Mona" siendo esto un String no un Array
 ```
-- **slice()**: Método que devuelve una parte del Array dentro de un nuevo Array.
+- **slice()**: Método que devuelve una parte del Array dentro de un nuevo Array. Podriamos decir que copia una parte del Array Original.
     Para ello el método **slice()** nos permite pasarle 2 parámetros:
-    - 1er parámetro: El índice del Array original desde el cual inicará la copia
+    - 1er parámetro: El índice del Array original desde el cual iniciará la copia
     - 2do parámetro: El índice del Array original en el que dejará de copiar (este ultimo elemento no se incluye en la copia)
 ```js
     let nombres = ["Roberto", "karina", "Mona", "Emy", "Nico"];
