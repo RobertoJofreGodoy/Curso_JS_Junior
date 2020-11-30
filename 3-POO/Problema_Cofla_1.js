@@ -7,6 +7,7 @@ class celular {
         this.pantalla = pantalla;
         this.camara = camara;
         this.ram = ram;
+        this.encendido = false;
     }
     info(){
         document.write(`<h2> ${this.marca} ${this.modelo} </h2>
@@ -17,16 +18,18 @@ class celular {
         -peso: ${this.peso} gr<br><br>
         `);
     }
-    encender(){
-        document.write(`El celular ${this.marca} ${this.modelo} se ha encendido`);
+    presionarBotonEncendidoApagado(){
+        if (this.ecendido == false) {
+            alert(`Prendiendo celular ${this.marca} ${this.modelo}`);
+        } else {
+            alert(`Apagando ${this.marca} ${this.modelo} ya esta encendido`);
+        }
     }
-    apagar(){
-        document.write(`El celular ${this.marca} ${this.modelo} se ha apagado`);
-    }
+    
     tomarFoto(){
         document.write(`El celular ${this.marca} ${this.modelo} ha tomado una foto`);
     }
-    grabar(){
+    grabarIvdeo(){
         document.write(`El celular ${this.marca} ${this.modelo} ha grabado un video`);
     }
 }
