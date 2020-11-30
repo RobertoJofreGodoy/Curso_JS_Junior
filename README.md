@@ -718,7 +718,7 @@ Los **Métodos de Cadena** nos permite modificar, concatenar, validar... cadenas
 ```
 - **substring()**: Crea una nuevo String y nos retorna un pedazo de la cadena que seleccionamos.
     **substring()** no se escribe con **camelCase** devido a que es solo una palabra.
-    Este método nos permite pasarle 2 parametros, el indice de donde empieza y el indice de donde termina (excluyendo este último.)
+    Este método nos permite pasarle 2 parámetros, el indice de donde empieza y el indice de donde termina (excluyendo este último.)
 ```js
     let cadena = `ABCDEFGHIJKLMNÑOPQRSTUVWXYZ`;
     let resultado = cadena.substring(0,4); //Creamos un nuevo String que contiene ABCD, debido a que empeiza en la posición 0 de "cadena" y termine en la posicón 4, pero este último no lo incluye. 
@@ -751,3 +751,118 @@ Los **Métodos de Cadena** nos permite modificar, concatenar, validar... cadenas
 - **trimEnd()**:  Elimina los espacios en blanco al final de una cadena.
 - **trimStart()**: Elimina los espacios en blanco al comienzo de una cadena.
 - **valueOf()**: retorna el valor primitivo de un objeto string
+
+## Métodos de Arrays
+
+### Transformadores:
+Los Transformadores son **métodos que modifican el Array**.
+- **pop()**: Método que elimina el último elemento de un Array y lo devuelve.
+```js
+    let nombres = ["Roberto", "karina", "Mona"];
+    let resultado = nombres.pop(); //eliminamos el último elemento del Array, pero queda almacenado en "resultado"
+
+    document.write(resultado); //Nos muestra el elemento eliminado
+    document.write(nombres); //Vemos el Array sin el elemento eliminado por "pop()"
+```
+- **shift()**: Método que elimina el primer elemento de un Array y lo devuelve.
+```js
+    let nombres = ["Roberto", "karina", "Mona"]; 
+    let resultado = nombres.shift(); //eliminamos el primer elemento del Array, pero queda almacenado en "resultado"
+
+    document.write(resultado); //Nos muestra el elemento eliminado
+    document.write(nombres); //Vemos el Array sin el elemento eliminado por "shift()"
+```
+- **push()**: Método que agrega un elemento al Array al final de la lista.
+```js
+    let nombres = ["Roberto", "karina", "Mona"];
+    let resultado = nombres.push("Emy","Nico"); //Agregamos "Emy" y "Nico" al final del Array
+
+    document.write(resultado); //Nos devuelve la cantidad de elementos que ahora tiene el Array
+    document.write(nombres);  //Vemos el Array con los nuevos elementos al final
+```
+- **reverse()**: Método que invierte el ordem de los elementos de un Array
+```js
+    let nombres = [1,2,3,4,5,6,7,8];
+    nombres.reverse(); //invertimos el orden del Array, y esta se modifica
+    document.write(nombres); //Vemos el Array invertido
+```
+- **unshift()**: Método que agrega uno o más elementos al inicio del Array y devuelve la nueva longitud del Array
+```js
+    let nombres = ["Roberto", "karina", "Mona"];
+    let resultado = nombres.unshift("Emy", "Nico"); //Agregamos "Emy" y "Nico" al final del Array
+
+    document.write(nombres);   //Vemos el Array con los nuevos elementos al principio
+    document.write(resultado); //Nos devuelve la cantidad de elementos que contiene el Array
+```
+- **sort()**: Método que ordena los elementos de un Array localmente y devuelve el arreglo ordenado. Se basa en el orden lexicográfico.
+**NOTA**: Solo tiene en cuenta el primer carácter de los números, ejemplo, si tenemos *let numero = [ 1,45,5,74,98 ]* el método *sort* ordenará los numero de la siguiente manera: *[ 1,45,5,74,98 ]*
+```js
+    let nombres = ["Zuloko","Roberto", "karina", "Mona","Andrea"];
+    let numeros = [5,7,2,4,9,1,5,2,6];
+
+    nombres.sort(); //ordenamos los nombres
+    numeros.sort(); //ordenamos los numero
+
+    document.write(nombres + `<br>`);
+    document.write(numeros);
+```
+- **splice()**: Método que cambia el contenido de un array eliminando elementos y/o agregando nuevos elementos.
+    Para ello Splice() tiene 3 parámetros:
+    - **1er parámetro**: La **posición del índice** en la que se iniciarán los cambios (siendo la primera 0).
+    - **2do parámetro**: La **CANTIDAD** de elementos que se eliminarán a partir de la posición indicada, si no queremos que se elimine ningun, colocamos 0.
+    - **3er parámetro**: Los elementos que agregaremos en caso de querer añadir elementos, estos se colocarán a partir de la posición indicada en el 1er parámetro.
+```js
+    let nombres = ["Roberto", "karina", "Mona"];
+    nombres.splice(1,2,"Emy","Nico"); //Eliminamos 2 elementos a partir del índice 1, y agregamos 2 más
+    nombres.splice(0,0,"Emy","Nico") //Aqui estariamos agrgando los elementos nuevos al principio sin eliminar nada.
+    nombres.splice(-1,0,"Emy","Nico") /*agregamos los elementos nuevos al final sin eliminar nada, 
+    SIN EMBARGO, el último elemnto del Array Original quedará después de los elementos agregados de esta manera, 
+    es decir, el último elemento sefuirá siendo el último. La forma de referirse al final de un Array es con "-1". 
+    Pero para este caso lo mejor es utilizar "push()"*/
+```
+
+### Accesores
+Los Métodos Accesores no modifican el Array original, sino que crean uno nuevo que contenga los datos a los que nosotros queremos acceder.
+- **join()**: Método que une todos los elementos de una matriz (u objeto similar) en un **String** y la devuelve.
+    Este método nos permite indicar un elemento separador:
+```js
+    let nombres = ["Roberto", "karina", "Mona"];
+    let resultado = nombres.join( " - " ); //Convertimos el Array a un String separando los elementos con un guión
+
+    document.write(resultado); // Veremos "Roberto - karina - Mona" siendo esto un String no un Array
+```
+- **slice()**: Método que devuelve una parte del Array dentro de un nuevo Array.
+    Para ello el método **slice()** nos permite pasarle 2 parámetros:
+    - 1er parámetro: El índice del Array original desde el cual inicará la copia
+    - 2do parámetro: El índice del Array original en el que dejará de copiar (este ultimo elemento no se incluye en la copia)
+```js
+    let nombres = ["Roberto", "karina", "Mona", "Emy", "Nico"];
+    let resultado = nombres.slice(1,4); //Creamos el Array "resultado" con los elementos desde el indice 1 hasta 4 (excluyendo este ultimo) del Array "nombres"
+    document.write(resultado); //Array con los elementos [karina,Mona,Emy]
+```
+- Métodos ya vistos en Métodos de Cadena: **toString(), indexOf(), lastIndexOf(), includes()**:
+    Ejemplos:
+```js
+    let nombres = ["Roberto", "karina", "Mona", "Emy", "Nico"];
+    let resultado = nombres.includes("Mona"); //true
+    let resultado2 = nombres.toString(); //convierte el Array en un String
+    let resultado3 = nombres.indexOf("Emy"); //Devuelve 3 que es el indice.
+```
+### De Repetición
+- **forEach()**: Ejecuta la función indicada una vez por cada elemento del Array
+```js
+    let nombres = ["Roberto", "karina", "Mona", "Emy", "Nico"];
+    nombres.forEach(nombre => document.write(nombre + `<br>`)); //recorremos todos los elementos del Array y nos permite ejecutar una función con cada uno de los elementos.
+```
+
+- **filter()**: Crea un nuevo Array con todos los elementos que cumplan una condición.
+```js
+    let nombres = ["Roberto", "karina", "Mona", "Emy", "Nico"];
+
+    let resultado = nombres.filter(nombre => nombre.length > 4); /* filter() nos permite crear una funcion en su interior 
+    que recorre los elementos del Array, y que además nos permite indicarle una condición, por lo que, 
+    en este caso "resultado" solo almacenará los elementos del Array "nombres" que contengan más de 4 carácteres.
+    */
+
+    document.write(resultado);
+```
