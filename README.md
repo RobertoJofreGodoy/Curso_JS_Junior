@@ -26,12 +26,12 @@ Otros usos no tan comunes:
 Una variable es un espacio que guardamos en memoria
 
 Podemos declarar una variable de 3 maneras diferentes:
-- **var**: definimos una variable y esta se puede utilizar en cualquier momento, se recomienda no utilizar debido a su Scope.
-- **let**: declara una variable que se encuentra limitada a su bloque. 
- No es lo mismo **Declarar** una variable o **Inicializar** una variable, podemos declarar una variable de la siguiente manera:
+- **var**: definimos una variable y esta se puede utilizar en cualquier momento, se recomienda no utilizar debido a su amplio Scope.
+- **let**: declara una variable que se encuentra limitada a su bloque, es una variable regional. 
+ NOTA: No es lo mismo **Declarar** una variable o **Inicializar** una variable, podemos declarar una variable de la siguiente manera:
     *let numero;*   -> estamos indicando que existe una variable con un alcanze regional (al ser let)
     *numero = 123;*   -> aqui estamos Inicializando la variable al introducirle un valor
-- **const**: delcaramos una variable que siempre mantendra su valor. ***Const* no se puede Declarar sin Inicializar**
+- **const**: declaramos una variable que siempre mantendra su valor. ***Const* no se puede Declarar sin Inicializar**
     ```js 
     const nombre = "Roberto"
     ```
@@ -47,7 +47,7 @@ Casos especiales de Datos donde la variable no esta definida o hay un error:
  - **Nan**: *'Not a Number'* valor que nos devuelve JS cuando intentamos realizar alguna operación matemática con variables que no son un numero
 
 ## SCOPE: 
-El scope de una variable hace referencia al lugar donde esta va a vivir , o podrá ser accesible. Podríamos decir también que scope es el alcance que determina la accesibilidad de las variables en cada parte de nuestro código.
+El scope de una variable hace referencia al lugar donde esta va a vivir , o podrá ser accesible. Podríamos decir también que **Scope** es el alcance que determina la accesibilidad de las variables en cada parte de nuestro código.
 
 ## Hoisting: 
 Concepto que trata sobre como un programa puede verse afectado por el orden de la creación y la ejecución del código.
@@ -61,7 +61,7 @@ el valor indicado quedará almacenado en la variable, por lo que podremos trabaj
 
 ## Operadores.
 ### Operadores de Asignación: 
-asigna un valor al operando de la izquierda basado en el valor del operando de la derecha.
+Asigna un valor al operando de la izquierda basado en el valor del operando de la derecha.
 ```
     Asignación: 	                                        x = y           significa:	x = y
     Asignación de adición: 	                                x += y          significa:	x = x + y
@@ -227,7 +227,7 @@ En este caso, creamos un objeto *computer* que tiene las propiedades *cpu, gpu, 
     document.write(computer["gpu"]);
 ```
 
-## Bucles de Iteracion
+## Bucles de Iteración
 un Bucle se repite constanstemente hasta que cumplen la condición que se le indica
 
 - **while** : Ejecuta en bucle uno bloque de código siempre y cuando la condición sea *True*, el pogramara no seguirá su flujo hasta que la condición sea *false*:
@@ -238,7 +238,7 @@ un Bucle se repite constanstemente hasta que cumplen la condición que se le ind
         numero++;
     }
 ```
-- **do while** : Primero ejecuta un bloque de código y después pregunta la condición, repetira el bloque de código hasta que la condición sea *false*. Esto es útil en caso de que queramos que el bloque de código se ejecuta por lo menos 1 vez.
+- **do while** : Primero ejecuta un bloque de código y después pregunta la condición, repetira el bloque de código hasta que la condición sea *false*. Esto es útil en caso de que querramos que el bloque de código se ejecute por lo menos 1 vez.
 ```javascript
     let numero = 0;
 
@@ -263,7 +263,7 @@ un Bucle se repite constanstemente hasta que cumplen la condición que se le ind
 ```
 - **for** :Es un Bucle que se repetirá el numero de veces que nosotros le indiquemos, **for** se compone de 3 partes:
     - **declaración e inicialización**: por regla general se declara una variable **i** (index)
-    - **Condicion**: al igual que **while** el bucle se ejecutará mientras la condición se cumpla (sea **true**) se utiliza la mima variable previamente *declarada* **i**.
+    - **Condicion**: al igual que **while** el bucle se ejecutará mientras la condición se cumpla (sea **true**) se utiliza la misma variable previamente *declarada* **i**.
     - **iteramos**: Definimos si la variable **i** se aumenta o decrementa, esto se ejecuta después de que el bloque de código termine.
 
     ```javascript
@@ -277,7 +277,7 @@ un Bucle se repite constanstemente hasta que cumplen la condición que se le ind
     ```
 
 - **continue** : Sentencia parecida a **break** que nos permite "saltarnos" una iteración de un Bucle y que después este se siga ejecutando:
-EL siguietne Bucle mostrará los números del 0 al 19, pero no el 12 devido a que se cortó esa iteración con **continue**.
+EL siguiente Bucle mostrará los números del 0 al 19, pero no el 12 devido a que se cortó esa iteración con **continue**.
 ```javascript
         for (let i = 0; i < 20 ; i++) {
             if (i == 12){
@@ -305,7 +305,7 @@ El anterior Código nos monstrara *0 1 2* que son los **índeces del Array**, si
 ```
 Ahora nos mostrará *Perro Gato Tigre*.
 
-- **for of** : Funciona de la igual menera que *for in* sin embargo nos devuelve automáticamente el contendido del **Array**
+- **for of** : Funciona de igual menera que *for in* sin embargo nos devuelve automáticamente el contendido del **Array**
 ```javascript
     let animales = ["Perro", "Gato", "Tigre"]
 
@@ -363,10 +363,10 @@ NOTA: las function() tienen un **Scope** global, podemos acceder a ellas desde c
 ```
 
 ### Return
-el return nos devuelve un valor, un tipo de dato, independientemente de lo que la *function* misma pueda mostrar u hacer en su ejecución, ejemplo:
+el return nos devuelve un valor, un tipo de dato, independientemente de lo que la *function* misma pueda mostrar o hacer en su ejecución, ejemplo:
 ```javascript
     function saludar(){
-        alert("Hola"); /*al ejecutarse la function() se monstrata este alert, pero este no es el valor final de la function()*/
+        alert("Hola"); /*al ejecutarse la function() se monstrata este alert, pero este no es el valor final de function()*/
         return "la función se ejecuto correctamente"; /*con return tenemos un valor, en este caso un String que es el resultado de la ejecución de function()*/
     }
 
@@ -377,7 +377,7 @@ el return nos devuelve un valor, un tipo de dato, independientemente de lo que l
 Cuando una *function()* retorna un valor se finaliza la *function()*, funciona igual que un *break*.
 
 ### Parámetros
-Los parámetros son valores que podemos darle una *function()* para que esta trabaje con esos valores y retorne un resultado diferente segun el valor que se le haya pasado.
+Los parámetros son valores que podemos darle una *function()* para que esta trabaje con esos valores y retorne un resultado diferente según el valor que se le haya pasado.
 ```javascript
     function suma(num1, num2){ /*declaramos los parámetros que nuestra función necesita*/
         let resultado = num1 + num2;
@@ -439,18 +439,18 @@ Cofla se mete a estudiar, en su curso son 19 alumnos en total, pero se rompio el
 Cofla vuelve a su casa con muchas tareas de calculo, por lo que debemos crear una calculadora para ayudar a Cofla:
 - Crear calculadora
 
-# Capitulo 3: Pogramacion Orientada a Objetos
+# Capitulo 3: Pogramación Orientada a Objetos
 los objetos tienen 2 conceptos, 
 - **Atributos**: caracterisisticas o cualidades: altura, color, marca...
 - **Metodos**: funcionalidades o métodos: encender, apagar, acelerar...
 
-la POO es un paradigma de la programacion que nos facilita las cosas al utilizar la logica que utilizariamos en la vida real.
+la POO es un paradigma de la programacion que nos facilita las cosas al utilizar la lógica que utilizariamos en la vida real.
 
 ### Conceptos Basicos de POO
 - **Clase**: la plantilla que creamos para poder fabricar objetos.
 - **Objeto**: Es el resultado de una clase
-- **Atributo**: las caracteristicas que tiene el Objeto, sus propiedades.
-- **Metodo**: Son las cosas que puede hacer nuestro Objeto
+- **Atributo**: las características que tiene el Objeto, sus propiedades.
+- **Método**: Son las cosas que puede hacer nuestro Objeto
 - **Constructor**: función obligatoria que debe tener cada clase, este Constructor, nos va a construir las propiedades de los Objetos.
 - **Instanciacion**: 
 
@@ -497,7 +497,7 @@ Vamos a agregar el método *saludar()* que permitirá que cualquiera de los Anim
     }
 }
 ```
-Como ya vismo **this** hace referencia al **Objeto** con lo que podemos acceder a sus atributos, para llamar a este método hacemos lo siguiente:
+Como ya vimos **this** hace referencia al **Objeto** con lo que podemos acceder a sus atributos, para llamar a este método hacemos lo siguiente:
 ```js
     perro.saludar();
     gato.saludar();
@@ -505,7 +505,7 @@ Como ya vismo **this** hace referencia al **Objeto** con lo que podemos acceder 
 ```
 ## Características de la POO
 ### Abstracción
-La Abstraccion tiene como objetivo intentar reducir lo mas posible un Objeto, tanto en sus **atributos** como en sus **métodos**
+La Abstraccion tiene como objetivo intentar reducir lo más posible un Objeto, tanto en sus **atributos** como en sus **métodos**
 
 ### Modularidad
 Es la capacidad de resolver un problema grande separandolo por partes.
@@ -547,8 +547,8 @@ Ahora tenemos una **Clase** capaz de crear **Objetos** *perro* heredando todas l
 Podemos crear un *objeto perro* que utilice el **método** *saludar()* indicado en la clase *animal*.
 ```js
     const perroPastorAleman = new perro("Perro", 5, "negro", "Pastor Aleman");
-    perroPastorAleman.saludar();
-    perroPastorAleman.ladrar();
+    perroPastorAleman.saludar(); //metodo creado en la clase 'animal'
+    perroPastorAleman.ladrar(); //metodo creado en la clase 'perro'
 
     //Pero un Objeto creado con la clase 'animal' no puede utilizar los métodos de la clase 'perro'
     const gato = new animal("gato", 7, "blanco");
@@ -578,7 +578,7 @@ Con esto, **podemos utilizar el método *ladrar()* sin la necesidad de instancia
 - **getters**: métodos para obtener un valor.
 - **setters**: métodos para modificar o definir un valor.
 
-En la mayoria de los lenguajes, los getters y setters se utilizan para acceder a propiedades privadas, en caso de JS, a datos encapsulados.
+En la mayoría de los lenguajes, los **getters** y **setters** se utilizan para acceder a propiedades privadas, en caso de JS, a datos encapsulados.
 
 Vamos a crear un **método Setter** que modifique la *raza* de los perros, para ello utilizamos la palabra reservada **set**:
 ```js
@@ -624,3 +624,7 @@ Cofla va a una tienda a comprarse un celular, de todos los modelos de la tienda 
 - Crear un sistema para mostrarle a Cofla las particularidades de los 3 celulares.
 - Cada celular debe tener color, peso, resolución de pantalla, resolución de cámara y memoria ram.
 - Cada celular debe poder encender, apagar, tomar fotos y grabar. 
+
+### PROBLEMA Nº 2
+Cofla no está satisfecho con los celulares asi que decide ir a la sección de los celulares de gama alta, donde encontrará los celulares más caros del lugar, así que al entrar vió dos celulares que le encantaro, estos 2 celulares de alta gama pueden hacer todo lo que podían hacer los 3 anteriores pero tienen mejpres características y además pueden grabar en camara super lenta, tienen reconocimiento facial y una camara extra.
+- Implementar todas estas cualidades en lso celulares de alta gama.

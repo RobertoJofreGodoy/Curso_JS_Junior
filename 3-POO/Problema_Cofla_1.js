@@ -9,6 +9,23 @@ class celular {
         this.ram = ram;
         this.encendido = false;
     }
+    
+    presionarBotonEncendidoApagado(){
+        if (this.ecendido == false) {
+            alert(`Prendiendo celular ${this.marca} ${this.modelo}`);
+            this.ecendido = true;
+        } else {
+            alert(`Apagando ${this.marca} ${this.modelo} ya esta encendido`);
+            this.encendido = false;
+        }
+    }
+    
+    tomarFoto(){
+        document.write(`El celular ${this.marca} ${this.modelo} ha tomado una foto <br>`);
+    }
+    grabarVideo(){
+        document.write(`El celular ${this.marca} ${this.modelo} ha grabado un video <br>`);
+    }
     info(){
         document.write(`<h2> ${this.marca} ${this.modelo} </h2>
         -color: ${this.color} <br>
@@ -17,20 +34,6 @@ class celular {
         -ram: ${this.ram} GB<br>
         -peso: ${this.peso} gr<br><br>
         `);
-    }
-    presionarBotonEncendidoApagado(){
-        if (this.ecendido == false) {
-            alert(`Prendiendo celular ${this.marca} ${this.modelo}`);
-        } else {
-            alert(`Apagando ${this.marca} ${this.modelo} ya esta encendido`);
-        }
-    }
-    
-    tomarFoto(){
-        document.write(`El celular ${this.marca} ${this.modelo} ha tomado una foto`);
-    }
-    grabarIvdeo(){
-        document.write(`El celular ${this.marca} ${this.modelo} ha grabado un video`);
     }
 }
 
@@ -42,4 +45,8 @@ document.write(`Buenas tardes, le muestro las caracterisirticas de los celulares
 celular1.info();
 celular2.info();
 celular3.info();
+
+celular2.presionarBotonEncendidoApagado();
+celular2.tomarFoto();
+celular3.grabarVideo();
 
