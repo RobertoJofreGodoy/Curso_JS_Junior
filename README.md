@@ -628,3 +628,10 @@ Cofla va a una tienda a comprarse un celular, de todos los modelos de la tienda 
 ### PROBLEMA Nº 2
 Cofla no está satisfecho con los celulares asi que decide ir a la sección de los celulares de gama alta, donde encontrará los celulares más caros del lugar, así que al entrar vió dos celulares que le encantaro, estos 2 celulares de alta gama pueden hacer todo lo que podían hacer los 3 anteriores pero tienen mejpres características y además pueden grabar en camara super lenta, tienen reconocimiento facial y una camara extra.
 - Implementar todas estas cualidades en lso celulares de alta gama.
+
+
+### PROBLEMA Nº3
+Cofla ya tiene su nuevo celular, ahora está mirando las apps de Play Store ya que quiere jugar a los juegos que sean muy populares, uqe tengan buena puntuacion y que pesen poco, pero las 7 apps que llamaron suy atención son similares, por que va a descargar solo 2 para no perder tanto tiempo jugando, pero no puede decidirse entre las 7 apps.
+- Crear un sistema que ayude a Cofla a decidir cual app descargar.
+- La información de los instaladores debe contener la cantidad de descargas, la puntuación y su peso.
+- Las Apps se deben poder Instalar, abrir, cerrar y desisntalar.
