@@ -671,16 +671,16 @@ Los **Métodos de Cadena** nos permite modificar, concatenar, validar... cadenas
     let resultado2 = cadena.includes(cadena3); //true
     let resultado3 = cadena.includes("hola"); //false
 ```
-- **indexOf()**: Devuelve el indice del primer caracter de la cadena, si no existe, devuelve -1.
+- **indexOf()**: Devuelve el indice del primer carácter de la cadena, si no existe, devuelve -1.
 ```js
     let cadena = `Estoy estudiando con Dalto`;
     let cadena2 = "estudiando";
-    let resultado = cadena.indexOf(cadena2); //En este caso el resultado es 6, debido a que la primera letra de "estudiando" en "cadena" se enceuntra en la posicion nº 6
+    let resultado = cadena.indexOf(cadena2); //En este caso el resultado es 6, debido a que la primera letra de "estudiando" en "cadena" se encuentra en la posición nº 6
 
     let resultado = cadena.indexOf("Hola"); //como no se encuentra en "cadena", devuelve -1
 ```
 
-- **lastIndexOf()**: Devuelve el último indice del primer caracter de la cadena, si no existe, devuelve -1.
+- **lastIndexOf()**: Devuelve el último indice del primer carácter de la cadena, si no existe, devuelve -1.
 ```js
     let cadena = `Estoy estudiando con Dalto Dalto Dalto Dalto Dalto Dalto`;
     let cadena2 = "Dalto";
@@ -772,7 +772,7 @@ Los Transformadores son **métodos que modifican el Array**.
     document.write(resultado); //Nos muestra el elemento eliminado
     document.write(nombres); //Vemos el Array sin el elemento eliminado por "shift()"
 ```
-- **push()**: Método que agrega uno o más elementos al final del Array.
+- **push()**: Método que agrega uno o más elementos al final del Array y devuelve la nueva longitud del Array.
 ```js
     let nombres = ["Roberto", "karina", "Mona"];
     let resultado = nombres.push("Emy","Nico"); //Agregamos "Emy" y "Nico" al final del Array
@@ -867,3 +867,102 @@ Los Métodos Accesores no modifican el Array original, sino que **crean un nuevo
 
     document.write(resultado);
 ```
+
+## Objeto Math
+### Métodos
+- **sqrt()**: Devuelve la raiz cuadrada positiva de un número.
+```js
+    let numero = Math.sqrt(25); //5
+```
+- **cbrt()**: Devuelve la raiz cúbica de un número.
+```js
+    let numero = Math.cbrt(27); //3
+```
+- **max()**: Devuelve el mayor de cero o más números. **NOTA**: Solo se admiten numeros.
+```js
+    let numero = Math.max(4,5,6,48,89,55,74,185,256,84,84,95); //256
+```
+- **min()**: Devuelve el más pequeño de cero o más números.
+```js
+    let numero = Math.min(4,5,6,48,89,55,74,185,256,84,84,95); //4
+```
+- **random()**: devuelve un número pseudo-aleatorio entre 0 y 1.
+    ¿Cómo lo hacemos para obtener un número aleatorio entre 1 y 100?
+```js
+    let numero = Math.random(); //nos muestra un numero aleatorio entre 0 y 1
+    let numero = Math.random() * 100; //ahora todos los numero entre 0 y 1 los múltiplicamos por 100
+    //El problema es que seguimos teniendo muchisimo decimales:
+    // 14.047725625382101
+    // 79.25209320859146
+    // 99.9694384484939
+```
+- **round()**: Devuelve el valor de un número redondeado al número entero más cercano.
+```js
+    let numero = Math.random() * 100; //volvemos a tener un número aleatorio entre 0 y 100 con muchos decimales
+    numero = Math.round(numero); //redondeamos al número entero más cercano, por lo que ya no tendremos decimales
+```
+¿Pero que pasa si yo no quiero que se incluya el numero 0?
+```js
+    for (let index = 0; index < 10000; index++) {
+    let numero = Math.random() * 99;
+    numero = Math.round(numero +1);
+    document.write(numero + `<br>`);
+    }
+```
+
+- **floor()**: Devuelve el mayor entero menor que o igual a un número.
+```js
+    let numero = Math.floor(4.99999999999); //Simpre redondea hacia abajo, por lo que por muchos decimales que tengamos, el resultado será siempre el número entero.   
+```
+
+- **fround()**: Devuelve la representación flotante de **precisión simple** (**4 bytes**) más cercana a un número.
+**NOTA**: cada byte almacena 4 caracteres, por lo que **4 bytes son 16 caracteres**.
+```js
+    let numero = Math.fround(9.7555555555555555555555555); // nos devuelve: 9.755555152893066 que la representación flotante de 4 bytes (precisión simple) más cercana al número indicado
+    let numero2 = Math.fround(9.999999999999999999999); // En este caso la representacion flotante más cercana es 10.
+```
+- **trunc()**: Devuelve la parte entera del número x, la eliminación de los digitos fraccionarios.
+```js
+    let numero = Math.trunc(9.854); //trunc elimina los decimales, no redondea, por lo que el resultado es 9
+```
+
+### Propiedades
+- **PI**: Ratio de la circunferencia de un circulo respecto a su diámetro, aproximadamente 3.141592653589793
+```js
+    let numero = Math.PI; // 3.141592653589793 devuelve la representación flotante de precisión simple
+```
+- **SQRT1_2**: Raíz cuadrada de 1/2; Equivalentemente, 1 sobre la raíz cuadrara de 2, aproximadamente 0.707
+```js
+    let numero = Math.SQRT1_2; //0.7071067811865476
+```
+- **SQRT2**: Raíz cuadrada de 2, aproximadamente 1.414
+```js
+    let numero = Math.SQRT2; //1.4142135623730951
+```
+
+### Logaritmos
+- **E**: Constante de Euler, la base de los logaritmos naturales, que es aproximadamente 2.718 
+- **LN2**: Logaritmo natural de 2, aproximadamente 0.693
+- **LN10**: Logaritmo natural de 10, aproximadamente 2.303
+- **LOG2E**: Logaritmo de E con base 2, aproximadamente 1.443
+- **LOG10E**: Logaritmo de E con base 10, aproximadamente 0.434
+
+### PROBLEMA DE COFLA CAPITULO 4:
+#### PROBLEMA Nº 1
+Cofla ya está terminando el primer semestre del primer ciclo, la tarea que debe realizar es mucho más avanzada de la que tenía antes, además de suma, resta, multiplicaicón y división, ahora también necesitará calcular las potencias, raices cuadradras y cúbicas.
+- Perfeccionar calculadora para poder implementar las nuevas funciones. 
+
+#### PROBLEMA Nº 2
+La facultad de Cofla está por comenzar y las 12 materisa de la carrera tienen asignado un profesor y todos los alumnos que se anotaron.
+- Crear una funcion que al pasarle como parámetro la materia nos devuelva:
+    - Profesor asignado
+    - El nombre de todos los alumnos inscritos.
+- Crear una función que nos diga en cuantas clases está inscrito Cofla.
+- Nombrar las clases en las que está y los profesores que las imparten.
+
+#### PROBLEMA Nº 3
+Cofla ya vió las 12 materias y se decidió en cual se va a inscribir, así que en 3 días lo hará, el problema es que se rompió el sistema de inscripciones.
+- Crear una función para preguntarle a Cofla en que materia se quiere inscribir.
+- Si ya hay 20 alumnos anotados en la materia negarle la inscripción
+- Si hay menos de 20 alumnos inscribir a Cofla y añadirlo a la lista de alumnos.
+
