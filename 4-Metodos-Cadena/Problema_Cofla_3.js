@@ -28,27 +28,26 @@ const sistemasoperativos = new Materia("Sistemas Operativos","Nicole",["Roberto"
 
 
 let nuevoAlumno = prompt(`Ingresa tu nombre`);
-let texto= ``;
+let texto= ``; //Aqui se almacenará el listado de las Materias para mostrar
 const preguntaNombre = () =>{
     alert(`Elige la materia en la que te quieres inscribir:`);
     for (materia in listaMaterias){
-        texto+=(`${parseInt(materia) +1}: ${listaMaterias[materia].nombre}   `);
+        texto+=(`${parseInt(materia) +1}: ${listaMaterias[materia].nombre}   `); //Guardamos el listado de las materias y le damos un indice con inicio en 1
     }
 
 }
 const preguntaMateria = () =>{
-    let seleccion = prompt(texto);
-    for (i = 0; i < listaMaterias.length; i++){
-        if ((i+1) == seleccion) {
-            if (listaMaterias[i].alumnos.length > 20) {
+    let seleccion = prompt(texto); //el usuario ingresa el indice de la materia a la que se quiere inscribir
+    for (i = 0; i < listaMaterias.length; i++){ //recorremos los indices de Materias para no estar preguntando uno por uno
+        if ((i+1) == seleccion) { //Como los indices los iniciamos en 1, sumamos "1" a "i" y comparamos con el numero ingresado por el usuario.
+            if (listaMaterias[i].alumnos.length > 20) { //Si ya hay 20 alumnos inscritos, el usuario queda afuera
                 document.write(`Lo sentimos, ya no quedan más cupos para ${listaMaterias[i].nombre}`);
-            }else {
-                Materia.addAlumno(listaMaterias[i],nuevoAlumno);
+            }else { //Sino, añadimos el usuario con el metodo "addAlumno"
+                Materia.addAlumno(listaMaterias[i],nuevoAlumno); 
                 document.write(`Felicidades, te inscribiste en <b>${listaMaterias[i].nombre}</b><br>Tu profesor será <b>${listaMaterias[i].profesor}</b>.<br>El listado completo de <b>alumnos</b> inscritos es: <br>-${listaMaterias[i].alumnos.join(`<br>-`)}`);
             }
         }
     }
-
 }
 
 preguntaNombre();

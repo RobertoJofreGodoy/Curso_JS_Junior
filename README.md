@@ -961,8 +961,87 @@ La facultad de Cofla está por comenzar y las 12 materisa de la carrera tienen a
 - Nombrar las clases en las que está y los profesores que las imparten.
 
 #### PROBLEMA Nº 3
-Cofla ya vió las 12 materias y se decidió en cual se va a inscribir, así que en 3 días lo hará, el problema es que se rompió el sistema de inscripciones.
+Cofla ya vió las 12 materias y se decidió en cual se va a inscribir, el problema es que se rompió el sistema de inscripciones.
 - Crear una función para preguntarle a Cofla en que materia se quiere inscribir.
-- Si ya hay 20 alumnos anotados en la materia negarle la inscripción
+- Si ya hay 20 alumnos anotados en la materia negarle la inscripción.
 - Si hay menos de 20 alumnos inscribir a Cofla y añadirlo a la lista de alumnos.
+
+# Capitulo 5: Console
+La consola también es un objeto, desde nuestro codigo podemos enviar instrucciones a la consola, como por ejemplo:
+```js
+    console.log("Hola");
+```
+Esto nos imprimirá *hola* en la consola del navegador, pero tenemos varias funciones que nos permiten trabajar con la consola:
+## funciones de registro
+- **assert()**: Aparecerá un mensaje de error en la consola si la afirmación es falsa. Si la afirmación es verdadera no aparecerá nada (NO ESTANDAR).
+- **clear()**: limpia la consola.
+- **error()**: Muestra un mensaje de error en la consola web.
+- **info()**: Emite un mensaje informativo a la consola, en Firefox y Chrome se muestra un pequeño icono "i" junto a estos elementos en el registro de la consola.
+- **log()**: Muestra un mensaje en la consola. 
+- **table()**: Esta función toma un argumento obligatorio: **data**, que debe ser un *Array* o un *Objeto*, y un parámetro adicional: **columns** y nos muestra una tabla en consola.
+```js
+    console.table([4,1,2,3,3,4,2,1,]);
+```
+- **warn()**: Imprime un mensaje de advertencia en la consola.
+- **dir()**: Despliega una lista interactiva de las propiedades del objeto JS especificado (NO ESTANDAR)
+
+## funciones de conteo
+- **count()**: Registra el número de veces que se llama a count(). Esta función toma como argumento opcional una etiqueta.
+Esta funcion es util para saber cuantas veces se ejecutó una función o un Ciclo.
+```js
+    function sumar (num1, num2){
+    console.count(); 
+    return num1 + num2;
+    } 
+
+    sumar(2,3);
+    sumar(4,7);
+    sumar(9,2);
+```
+- **countReset()**: Resetea el contador **console.count()**.
+
+## funciones de Agrupación.
+- **group()**: Crea un nuevo grupo en linea en el registro de console, tambien podemos darle un nombre al grupo
+- **groupEnd()**: Remueve un grupo en linea en el registro de la consola, lo que nos permite regresar a un grupo anterior.
+- **groupCollapsed()**: Crea un grupo en linea pero contraido, el usuario debe expandirlo para verlo.
+
+## funciones de temporización.
+- **time()**: Inicia un temporizador.
+- **timeEnd()**: Detiene un temporizador
+- **timeLog()**: Registra el valor actual de un temporizador
+Estas funciones nos permiten cuanto tiempo se demora un usuario en realizar una accion o cuanto tiempo se demora una funcion o un ciclo en ejecutarse.
+
+**Nota**: tambien podemos **modificar el estilo del texto** en la consola, ejemplo:
+```js
+    console.log("%crancio", "color:red;background:black;padding:20px;border: 3px solid blue;");
+```
+### PROBLEMA DE COFLA CAPITULO 5:
+#### PROBLEMA Nº 1
+Terminó el primer semestre y Cofla no sabe si aprobará o no las materias, para lograrlo necesitará:
+Contar con al menos el 90% de asistencia.
+El promedio por materia debe ser de al menos 7 / 10.
+Debe tener al menos el 75% de los trabajos prácticos entregados.
+- Solicitar los datos y decirle si aprueba o no.
+- Mostrar todo esto con colores representativos en consola (ej: aprobado en verde)
+- Todo estructurado como Tabla
+
+#### PROBLEMA Nº 2
+Cofla está sufriendo un poco... a pesar de que cree contar con el 90% de asistencias y tener un promedio mayor al 70%, no cree poder entregar el 75% de trabajos practicos, ya que necesita dividir las tareas que hará semanalmente, Cofla debe trabajar 8 horas por dia durante 2 semanas entre las cuales tiene que:
+estudiar 24 horas
+24 horas para hacer trabajos
+56 horas para trabajar
+8 horas deberes del hogar
+
+- Organizar las actividades diariamente
+- Utilizar la consola para organizar todo
+- El tiempo por tarea no debe superar las 4 horas
+
+# Capitulo 6: DOM
+## Definición
+DOM: document Object Model, es la interfaz que contiene todos los objetos estandares que nos permiten represnetar todos los elementos html, xml o xhtml, que a su vez tiene otra interfaz que nos permite decir que cosa combina con cada cosa y otra que nos permite trabajar con un lenguaje como JavaScript.
+Es el documento en sí que contiene todos los elementos.
+
+## Nodo
+Un nodo en el **DOM** es cualquier *etiqueta* del cuerpo, como un párrafo, el mismo body o incluso las etiquetas de una lista.
+**NOTA**: no siempre son etiquetas, pero eso lo veremos más adelante.
 
