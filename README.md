@@ -1044,4 +1044,268 @@ Es el documento en sí que contiene todos los elementos.
 ## Nodo
 Un nodo en el **DOM** es cualquier *etiqueta* del cuerpo, como un párrafo, el mismo body o incluso las etiquetas de una lista.
 **NOTA**: no siempre son etiquetas, pero eso lo veremos más adelante.
+Existen varios tipos de **Nodos**:
+### Tipos de Nodos
+- **Document**: El nodo document es el nodo raíz, a partir del cual derivan el resto de nodos.
+- **Element**: Nodos definidos por etiquetas HTML.
+- **Text**: El texto dentro de un Nodo Element se considera un nuevo Nodo hijo de tipo Text.
+- **Attribute**: Los Atributos de las etiquetas definen Nodos (en JS no los veremos como nodos, sino como información asociada al nodo de tipo elemento).
+- **Comentarios y otros**: Los comentarios y otros elementos como las declaraciones doctype en cabecera de los elementos HTML generan nodos.
 
+### Métodos de Selección de Elementos
+Recordemos que los métodos se aplican a Objetos, para estos metodos, el Objeto sería "document"
+- **getElementById()**: Selecciona un Elemento por ID.
+```html
+    <body>
+        <p id="test">Este es un texto de prueba</p>
+        <script src="script.js"></script>
+    </body>
+```
+```js
+    parrafo = document.getElementById("test");
+    document.write(parrafo); //Esto nos devuelve [object HTMLParagraphElement]
+    //Nos indica que es un Objeto Elemento Párrafo de HTML.
+```
+
+- **getElementsByTagName()**: Selecciona todos los elementos que coincidan con el nombre de la etiqueta especificada.
+```html
+    <body>
+        <p id="test">Este es un texto de prueba</p>
+        <p id="rancio">Este es un texto de prueba</p>
+
+        <script src="script.js"></script>
+    </body>
+```
+```js
+    parrafo = document.getElementsByTagName("p");
+    document.write(parrafo); //Esto nos devuelve [object HTMLCollection]
+    //Nos indica que es una Colección HTML, devido a que está seleccionando una lista de elementos "p" 
+    document.write(parrafo[0]); //[object HTMLParagraphElement]
+    //Devido a que es una Colección, podemos indicarle el indice del Elemento al que queremos acceder.
+    //OJO!!! NO ES UN ARRAY, ES UNA COLECCIÓN *******************
+```
+
+- **querySelector()**: Devuelve el primer elemento que coincida con el grupo especificado de selectores (CSS).
+```html
+    <body>
+        <p class="parrafo">Este es un texto de prueba</p>
+        <script src="script.js"></script>
+    </body>
+```
+```js
+    parrafo = document.querySelector(".parrafo"); //Seleccionamos el Primer elemento que contenga la Clase "parrafo"
+    document.write(parrafo); //[object HTMLParagraphElement]
+```
+
+- **QuerySelectorAll()**: Devuelve todos los elementos que coincidan con el grupo especificado de selectores (CSS).
+```html
+   <body>
+        <p class="parrafo">Este es un texto de prueba</p>
+        <p class="parrafo">Este es un texto de prueba</p>
+        <p class="parrafo">Este es un texto de prueba</p>
+        <p class="parrafo">Este es un texto de prueba</p>
+        <p class="parrafo">Este es un texto de prueba</p>
+
+        <script src="script.js"></script>
+    </body>
+```
+```js
+    parrafo = document.querySelectorAll(".parrafo"); //Seleccionamos todos los Elementos que contengan la Clase "parrafo"
+    document.write(parrafo); // [object NodeList]
+    //Es una lista de Nodos
+
+    document.write(parrafo[0]);
+    document.write(parrafo[1]);
+    //NO ES UN ARRAY!
+    //Pero podemos seleccionar los elementos por su indice dentro de la lista de Nodos
+```
+
+### Métodos para Definir, Obtener y Eliminar valores de Atributos de los Elementos
+- **setAttribute()**: Modifica el valor de un atributo.
+```html
+   <body>
+        <input type="text" class="rangoEtario">
+        <label>Rango de Edad</label>
+
+        <script src="script.js"></script>
+    </body>
+```
+```js
+    const rangoEtario = document.querySelector(".rangoEtario"); //Seleccionamos el input con la clase "rangoEtario"
+
+    rangoEtario.setAttribute("type","range"); //Modificamos el atributo "type" y le indicamos que sea "range"
+    //Esto no solo modifica el "type", sino que en caso de que ese atributo no existiera, con este método lo añadiriamos.
+```
+
+- **getAttribute()**: Obtiene el valor de un atributo.
+```html
+   <body>
+        <input type="text" class="rangoEtario">
+        <label>Rango de Edad</label>
+
+        <script src="script.js"></script>
+    </body>
+```
+```js
+    const rangoEtario = document.querySelector(".rangoEtario"); //Seleccionamos el input con la clase "rangoEtario"
+    valorAtributo = rangoEtario.getAttribute("type"); //Obtenemos el valor del atributo "type" del elemento con la clase "rangoEtario"
+    document.write(valorAtributo); //Imprimimos en pantalla el valor del atributo, que en este caso es "text"
+```
+
+- **removeAttribute()**: Elimina el valor de un atributo.
+```html
+   <body>
+        <input type="range" class="rangoEtario">
+        <label>Rango de Edad</label>
+
+        <script src="script.js"></script>
+    </body>
+```
+```js
+    const rangoEtario = document.querySelector(".rangoEtario");
+    rangoEtario.removeAttribute("type"); //Eliminamos el atributo "type", que en este caso tenia un valor "range"
+
+    valorAtributo = rangoEtario.getAttribute("type"); // ¿Que pasa si intentamos obtener el atributo si ya lo eliminamos?
+    document.write(valorAtributo); //Nos devolverá "null" 
+    //aunque en este caso el navegador interpreta un "type" por defecto que es "text" aunque este no exista 
+```
+
+### Atributos Globales
+Los **atributos globales** son los atributos que **tienen en común TODOS los elementos de HTML**
+- **class**: lista de clases del elemento separadas por espacios.
+- **contenteditable**: indica si el elemento puede ser modificable por el usuario (bool).
+    ```js
+    const titulo = document.querySelector(".titulo");
+    titulo.setAttribute("contenteditable","true"); //Podremos editar el contendio del Elemento con la Clase "titulo".
+    ```
+- **dir**: indica la direccionalidad del texto. Este atributo permite 3 valores: (se recomienda hacer esto desde CSS, no en JS)
+    - **ltr**: Left To Right (por defecto)
+    - **rtl**: Right To left
+- **hidden**:  indica si el elemento aún no es, o ya no es, relevante. Si hidden está definido, no importa el valor que tenga, el elemento se ocultará, pero SI debe tener un valor asignado, aunque sea vacio "".
+- **id**: define un identificador único.
+- **tabindex**: indica si el elemtento puede obtener un focus de input.
+- **title**: contiene un texto con información relacionada al elemento al que pertenece. Al hacer Hover veremos el valor
+- **style**:  contiene declaraciones de estilo CSS para ser aplicadas al elemento.
+
+### Atributos de Inputs.
+Ahora accederemos a los atributos de los Inputs directamente desde JS sin un método de intermediario.
+Podemos acceder y modificar los atributos desde el Objeto, como propiedades.
+- **className**: no muestra el nombre de la Clase.
+- **value**: El valor es lo que contiene el input.
+- **type**: El tipo de Input.
+- **accept**:
+- **form**: Permite hacer referencia a un formulario con un id en específico.
+- **minLength**: La minima cantidad de caracteres que debe tener el Input.
+- **placeholder**: Texto indicativo del Input.
+- **required**: Nos permite indicar si un campo se requiere para enviarlo.
+```html
+   <body>
+        <form action="">
+            <input type="text" class="input-normal" value="124" minlength="4">
+            <input type="submit" value="Enviar">
+            <br><br>
+        </form>
+        <script src="script.js"></script>
+    </body>
+```
+```js
+    const input = document.querySelector(".input-normal");
+
+    document.write(input.className); //input-normal
+    document.write(`<br>`); 
+    document.write(input.value); //1234
+    document.write(`<br>`);
+    document.write(input.value = ""); //Podemos modificarlo directamente 
+    document.write(`<br>`);
+    document.write(input.type); //text
+    document.write(`<br>`);
+    document.write(input.type = "text"); //Lo modificamos directamente
+    document.write(`<br>`);
+    document.write(input.accept); //Se utiliza para los input type =file que nos permite seleccionar un archivo local
+    document.write(input.accept = "image/png"); //Solo aceptará imagenes con extensión png
+    document.write(`<br>`);
+    document.write(input.form = "formulario"); //hacemos referencia a un "form" con id  "formulario"
+    document.write(`<br>`);
+    document.write(input.minLength=6);
+    document.write(`<br>`);
+    document.write(input.placeholder = "que pasa mami");
+    document.write(`<br>`);
+    document.write(input.required = " ");
+    document.write(`<br>`);
+```
+
+### Atributo Style
+Nos permite modificar el CSS del Atributo.
+**NOTA**: tener en cuenta que en JS se deben escribir las propiedades con **camelCase**
+Ejemplo: **CSS**: *background-color*  => **JS**: *backgroundColor*
+```html
+   <body>
+        <h1 class="titulo">Elemento a Modificar</h1>
+        
+        <script src="script.js"></script>
+    </body>
+```
+```js
+    const titulo = document.querySelector(".titulo");
+    titulo.style.color = "red"
+    titulo.style.backgroundColor = "#000";
+    titulo.style.padding="30px";
+``` 
+
+## ClassList
+Es una particularidad de las Clases de los Objetos.
+HTML DE EJEMPLO:
+```html
+   <body>
+        <h1 class="titulo test elemento">Elemento a Modificar</h1>
+        <script src="script.js"></script>
+    </body>
+```
+### Métodos de classList
+- **add()**: Añade una clase.
+```js
+    const titulo = document.querySelector(".titulo");
+    titulo.classList.add("grande"); //añade la clase "grande"
+``` 
+Supongamos que tenemos el siguiente **CSS**:
+```css
+    .grande{
+        font-size: 50px;
+        color: red;
+    }
+``` 
+Al agregarle la clase "grande" veremos las propieades especificadas en el **CSS**
+
+- **remove()**: Elimina una clase.
+```js
+    const titulo = document.querySelector(".titulo");
+    titulo.classList.remove("grande"); //eliminamos la clase "grande", por lo que dejará de tomar sus propiedades de CSS
+``` 
+- **item()**: Devuelve la clase del indice especificado, no modifica las clases.
+```js
+    const titulo = document.querySelector(".titulo");
+    let valorItem = titulo.classList.item(0); //recordemos que tenemos <h1 class="titulo test elemento">
+    document.write(valorItem); //nos devuelve "titulo" ya que es el indice 0
+``` 
+- **contains()**: verifica si ese elemento posee o no clase especificada. (true o false)
+```js
+    const titulo = document.querySelector(".titulo");
+    let valorContains = titulo.classList.contains("elemento"); //¿Contiene la clase "elemento"?
+    if (valorContains){
+        document.write(`La clase existe`);
+    } else{
+        document.write(`La NO clase existe`);
+    }
+``` 
+- **toggle()**: si no tiene la clase especificada, la agrega, si ya la tiene, la elimina.
+**toggle()** nos permite indicarle un *2do parametro opcional*: **true** si está la clase NO la va a eliminar, **false** siempre eliminará la clase
+```js
+    const titulo = document.querySelector(".titulo");
+    titulo.classList.toggle("grande",true); //Si no está la Clase la va a añadir, pero al tener "true" si está la clase No la va a eliminar.
+``` 
+- **replace()**: reemplaza una clase por otra. Si reemplaza la Clase con exito, devuelve **true**, si la clase indicada no existe devuelve **false**
+```js
+const titulo = document.querySelector(".titulo");
+let valorReplace = titulo.classList.replace("grande","chico"); //reemplazamos la clase "grande" por la clase "chico"
+document.write(valorReplace); //true
+``` 

@@ -1,0 +1,11 @@
+body{
+    font-family: sans-serif;
+}
+.grande{
+    font-size: 50px;
+    color: red;
+}
+.chico{
+    font-size: 10px;
+    color: blue;
+}
