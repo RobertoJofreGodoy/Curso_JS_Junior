@@ -277,7 +277,7 @@ un Bucle se repite constanstemente hasta que cumplen la condición que se le ind
     ```
 
 - **continue** : Sentencia parecida a **break** que nos permite "saltarnos" una iteración de un Bucle y que después este se siga ejecutando:
-EL siguiente Bucle mostrará los números del 0 al 19, pero no el 12 devido a que se cortó esa iteración con **continue**.
+EL siguiente Bucle mostrará los números del 0 al 19, pero no el 12 debido a que se cortó esa iteración con **continue**.
 ```javascript
         for (let i = 0; i < 20 ; i++) {
             if (i == 12){
@@ -717,7 +717,7 @@ Los **Métodos de Cadena** nos permite modificar, concatenar, validar... cadenas
     document.write(resultado[2]); //estas?
 ```
 - **substring()**: Crea una nuevo String y nos retorna un pedazo de la cadena que seleccionamos.
-    **substring()** no se escribe con **camelCase** devido a que es solo una palabra.
+    **substring()** no se escribe con **camelCase** debido a que es solo una palabra.
     Este método nos permite pasarle 2 parámetros, el indice de donde empieza y el indice de donde termina (excluyendo este último.)
 ```js
     let cadena = `ABCDEFGHIJKLMNÑOPQRSTUVWXYZ`;
@@ -1058,7 +1058,6 @@ Recordemos que los métodos se aplican a Objetos, para estos metodos, el Objeto 
 ```html
     <body>
         <p id="test">Este es un texto de prueba</p>
-        <script src="script.js"></script>
     </body>
 ```
 ```js
@@ -1072,16 +1071,14 @@ Recordemos que los métodos se aplican a Objetos, para estos metodos, el Objeto 
     <body>
         <p id="test">Este es un texto de prueba</p>
         <p id="rancio">Este es un texto de prueba</p>
-
-        <script src="script.js"></script>
     </body>
 ```
 ```js
     parrafo = document.getElementsByTagName("p");
     document.write(parrafo); //Esto nos devuelve [object HTMLCollection]
-    //Nos indica que es una Colección HTML, devido a que está seleccionando una lista de elementos "p" 
+    //Nos indica que es una Colección HTML, debido a que está seleccionando una lista de elementos "p" 
     document.write(parrafo[0]); //[object HTMLParagraphElement]
-    //Devido a que es una Colección, podemos indicarle el indice del Elemento al que queremos acceder.
+    //Debido a que es una Colección, podemos indicarle el indice del Elemento al que queremos acceder.
     //OJO!!! NO ES UN ARRAY, ES UNA COLECCIÓN *******************
 ```
 
@@ -1089,7 +1086,6 @@ Recordemos que los métodos se aplican a Objetos, para estos metodos, el Objeto 
 ```html
     <body>
         <p class="parrafo">Este es un texto de prueba</p>
-        <script src="script.js"></script>
     </body>
 ```
 ```js
@@ -1105,8 +1101,6 @@ Recordemos que los métodos se aplican a Objetos, para estos metodos, el Objeto 
         <p class="parrafo">Este es un texto de prueba</p>
         <p class="parrafo">Este es un texto de prueba</p>
         <p class="parrafo">Este es un texto de prueba</p>
-
-        <script src="script.js"></script>
     </body>
 ```
 ```js
@@ -1126,8 +1120,6 @@ Recordemos que los métodos se aplican a Objetos, para estos metodos, el Objeto 
    <body>
         <input type="text" class="rangoEtario">
         <label>Rango de Edad</label>
-
-        <script src="script.js"></script>
     </body>
 ```
 ```js
@@ -1142,8 +1134,6 @@ Recordemos que los métodos se aplican a Objetos, para estos metodos, el Objeto 
    <body>
         <input type="text" class="rangoEtario">
         <label>Rango de Edad</label>
-
-        <script src="script.js"></script>
     </body>
 ```
 ```js
@@ -1157,8 +1147,6 @@ Recordemos que los métodos se aplican a Objetos, para estos metodos, el Objeto 
    <body>
         <input type="range" class="rangoEtario">
         <label>Rango de Edad</label>
-
-        <script src="script.js"></script>
     </body>
 ```
 ```js
@@ -1205,7 +1193,6 @@ Podemos acceder y modificar los atributos desde el Objeto, como propiedades.
             <input type="submit" value="Enviar">
             <br><br>
         </form>
-        <script src="script.js"></script>
     </body>
 ```
 ```js
@@ -1241,8 +1228,6 @@ Ejemplo: **CSS**: *background-color*  => **JS**: *backgroundColor*
 ```html
    <body>
         <h1 class="titulo">Elemento a Modificar</h1>
-        
-        <script src="script.js"></script>
     </body>
 ```
 ```js
@@ -1258,7 +1243,6 @@ HTML DE EJEMPLO:
 ```html
    <body>
         <h1 class="titulo test elemento">Elemento a Modificar</h1>
-        <script src="script.js"></script>
     </body>
 ```
 ### Métodos de classList
@@ -1309,3 +1293,112 @@ const titulo = document.querySelector(".titulo");
 let valorReplace = titulo.classList.replace("grande","chico"); //reemplazamos la clase "grande" por la clase "chico"
 document.write(valorReplace); //true
 ``` 
+## Obtención, Creación y Modificación de Elementos
+### Obtención
+```html
+   <body>
+        <p class="titulo">Elemento a <b>Modificar</b></p> <!-- Colocamos en negrita la palabra "Modificar" -->
+        <p class="titulo2">Elemento a <b hidden ="">Modificar</b></p> <!-- Ocultamos la palabra "Modificar"-->
+    </body> 
+```
+
+- **textContent**: devuelve el texto de cualquier nodo.
+```js
+    const titulo = document.querySelector(".titulo");
+    let resultado = titulo.textContent;
+    document.write(resultado); //Nos devuelve el texto "Elemento a Modificar", pero sin la etiqueta <b> de Modificar.
+    //PERO
+    const titulo2 = document.querySelector(".titulo2");
+    let resultado2 = titulo2.textContent;
+    document.write(resultado2); //Nos devuelve el texto "Elemento a Modificar" a pesar de que contiene la etiqueta "hidden"
+``` 
+- **innerHTML**: devuelve el contenido HTML de un elemento, por lo tanto, tener en cuenta de que al momento de mostrarlo en pantalla, el navegador lo va a interpretar.
+```js
+    const titulo = document.querySelector(".titulo");
+    let resultado = titulo.innerHTML;
+    document.write(resultado); // devuelve "Elemento a <b>Modificar</b>" y el navegador interpreta la etiqueta <b>
+
+
+    const titulo2 = document.querySelector(".titulo2");
+    let resultado2 = titulo2.innerHTML;
+    alert(resultado2); // "Elemento a <b hidden ="">Modificar</b>"
+    //Podemos ver como en el alert aparece todo el contenido de la etiqueta con class "titulo2"
+``` 
+- **outerHTML**: devuelve el código HTML completo del elemento, por lo tanto, tener en cuenta de que al momento de mostrarlo en pantalla, el navegador lo va a interpretar.
+```js
+    const titulo = document.querySelector(".titulo");
+    let resultado = titulo.innerHTML;
+    document.write(resultado); // devuelve "<p class="titulo">Elemento a <b>Modificar</b></p>" y el navegador interpreta todo
+
+
+    const titulo2 = document.querySelector(".titulo2");
+    let resultado2 = titulo2.innerHTML;
+    alert(resultado2); // devuelve "<p class="titulo2">Elemento a <b hidden ="">Modificar</b></p>"
+    //vemos el contenido completo, incluyendo el HTML de la etiqueta
+``` 
+**EN RESUMEN**:
+```html
+   <p class="titulo2">Elemento a <b hidden ="">Modificar</b></p>
+```
+```js
+    const titulo = document.querySelector(".titulo");
+
+    let resultado = titulo.textContent;
+    let resultado2 = titulo.innerHTML;
+    let resultado3 = titulo.outerHTML;
+
+    alert(resultado); //Elemento a Modificar
+    alert(resultado2); // Elemento a <b hidden ="">Modificar</b>
+    alert(resultado3); // <p class="titulo2">Elemento a <b hidden ="">Modificar</b></p>
+
+``` 
+- **innerText**: devuelve el texto visible de un **node element**. **NO SE USA**
+- **outterText**: devuelve el texto que de las etiquetas html incluidas las etiquedas. **NO SE USA**
+
+### Creación de Elementos
+Existen muchas formas de crear elementos en JavaScript, pero vamos a ver las formas más comunes.
+Para estos Métodos utilizaremos el siguiente HTML:
+```html
+    <body>
+        <div class="contenedor"></div>
+    </body>
+```
+
+- **createElements()**: Método que nos permite crear un **Node element** pasandole como parámetro su etiqueta. 
+**NOTA**: las etiquetas debe ir en **MAYUSCULAS**
+```js
+    const contenedor = document.querySelector(".contenedor"); 
+
+    const lista = document.createElement("LI"); //Creamos un elemento <li> en el documento.
+    document.write(lista); // [object HTMLLIElement] vemos que efectivamente tenemos un nuevo Nodo Element Li HTMl como Objeto, pero de momento no hemos hecho nada más que mostrar que existe.
+    console.log(lista); //En Consola podemos ver <li></li>
+``` 
+- **createTextNode()**: Método que nos permite crear un **Node text** dentro de un **Node element** 
+```js
+    const contenedor = document.querySelector(".contenedor");
+    const lista = document.createElement("LI");
+
+    const listaItem = document.createTextNode("Este es un Item de la Lista"); //Siempre creamos en base al DOM, pero eso utilizamos document.createTextNode() y no lista.createTextNode()
+
+    console.log(lista); // <li></li> 
+    console.log(listaItem); // "Este es un Item de la Lista"
+
+    //Tenemos un Node Element Li llamado *lista* y un Node Text llamado *listaItem*
+    // Pero están por separado
+    // ¿Cómo hacemos para colocar un Nodo dentro de otro Nodo?
+
+    lista.innerHTML = listaItem; //¿Tiene sentido hacer esto?
+    console.log(lista); //<li>[object Text]</li> 
+    //Vemos que nos devuelve un Objeto texto, debido a que "listaItem" es un Nodo, por lo que no tenemos el resultado que buscabamos.
+
+    //Para ello utilizaremos el siguiente Método:
+``` 
+- **appendChild()**: Métodos que se aplican a los **elementos Padre** pero que toma como parámetro un **elemento Hijo**
+```js
+    lista.appendChild(listaItem); //*lista* es el elemento Padre al que le pasamos como parámetro el elemento *listaItem* que será el Hijo
+
+    contenedor.appendChild(lista); //Ahora podemos hacer lo mismo con el elemento *contenedor*, que recordemos es el <div> creado en el HTML, por lo que será el Padre, y *lista* su Hijo. 
+    // Y de esta manera, creamos un Node Element Li con un Node Text de contenido y lo agregamos al Div, por lo que lo vemos reflejado en pantalla
+``` 
+
+- **createDocumentFragment()**:
