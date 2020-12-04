@@ -1470,13 +1470,13 @@ Propiedades:
     console.log(primerHijo);// nos retorna: #text, y no el h2 que queriamos.
     //¿a qué se debe esto?
 ``` 
-Si vemos el código HTML podemos ver que la etquieta <h2> no está exactamente a continuación del <div>, sino que hay un espacio en blanco que los separa, ese espacio en blanco es un **Text Node**, por lo tanto es el primer hijo de <div>
+Si vemos el código HTML podemos ver que la etiqueta *<h2>* no está exactamente a continuación del *<div>*, sino que hay un espacio en blanco que los separa, ese espacio en blanco es un **Text Node**, por lo tanto es el primer hijo de *<div>*
 ```html
         <div class="contenedor">
 <!-- text--><h2>un h2 común</h2> 
         </div>
 ```
-Para que <h2> fuera el primer hijo de <div>, tendría que estar de la siguiente manera:
+Para que <h2> fuera el primer hijo de *<div>*, tendría que estar de la siguiente manera:
 ```html
         <div class="contenedor"><h2>un h2 común</h2> 
         </div>
