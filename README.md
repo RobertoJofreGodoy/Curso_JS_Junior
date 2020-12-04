@@ -162,8 +162,8 @@ Para ello tenemos los siguientes condicionales:
         alert(`Hola ${nombre}, no tienes 27, tienes ${edad} años`);
     };
 ```
-### PROBLEMA DE COFLA CAPITULO 1:
-#### PROBLEMA Nº 1
+## PROBLEMA DE COFLA CAPITULO 1:
+### PROBLEMA Nº 1
 3 chicos de 23 años entran a una heladería a comprar, pero los precios no estan al lado de cada estante con su respectivo helado, ellos quieren comprar el helado mas caro posible con el dinero que tienen.
 Cada uno tiene distintas cantidades de dinero, y hay una tabla en la que podemos basarnos para saber el costo de cada helado.
 Crear soluciones:
@@ -185,14 +185,14 @@ Crear soluciones:
 - Potecito de helado con confites: $2.9 USD
 - Pote de 1/4 KG: $2.9 USD
 
-#### PROBLEMA Nº 2
+### PROBLEMA Nº 2
 Cofla no compra un carajo y decide darle ese dinero a un homeless que a su vez compra un boleto de lotería:
 - Si le alcanza para uno, lo compra.
 - si le alcanza para 2, compra los 2.
 - si le alcanza para tres y le sobra, compra 2 y regala el vuelto.
 - debe mostrarse en pantalla los boletos que compro y el vuelto.
 
-#### PROBLEMA Nº 3
+### PROBLEMA Nº 3
 Cofla es sospechoso de un delito y es detenido, en comisaría lo conectan a un detector de mentiras para saber si Cofla dice la verdad.
 - Si miente, le da una descarga eléctrica.
 - Si no miente, no hacer nada.
@@ -423,19 +423,19 @@ Las Arrow Function tienen varias ventajas:
     const saludarArrow = nombre => `Hola ${nombre}!`;
 ```
 
-### PROBLEMA DE COFLA CAPITULO 2:
-#### PROBLEMA Nº 1
+## PROBLEMA DE COFLA CAPITULO 2:
+### PROBLEMA Nº 1
 EL Homeless al que Cofla le regalo plata, se gano la lotería. Este Señor decide hacer una fiesta! compró una máquina que deja pasar solamente a los mayores de edad:
 - Dejar pasar solo a los mayores de edad (+18).
 - La primera persona en entre después de las 2 AM, no paga.
 
-#### PROBLEMA Nº 2
+### PROBLEMA Nº 2
 Cofla se mete a estudiar, en su curso son 19 alumnos en total, pero se rompio el registro de asistencia, por los proximos 30 dias no se podra hacer registro de ningun tipo
 - Crear un mini sistema que nos permita registrar a los alumnos que estan Presentes (p) y Ausentes (a)
 - Pasados 30 dias, mostrar la situacion final del Alumno
 - Se puede tener un maximo del 10% de ausencias por semestre, si se tinen mas, aclarar que el Alumno esta reprovado
 
-#### PROBLEMA Nº 3
+### PROBLEMA Nº 3
 Cofla vuelve a su casa con muchas tareas de calculo, por lo que debemos crear una calculadora para ayudar a Cofla:
 - Crear calculadora
 
@@ -618,8 +618,8 @@ Ahora podemos saber de qué *raza* es un perro utilizando un **método Getter**.
 ```js
     document.write(perroPastorAleman.getRaza);
 ```
-### PROBLEMA DE COFLA CAPITULO 3:
-#### PROBLEMA Nº 1
+## PROBLEMA DE COFLA CAPITULO 3:
+### PROBLEMA Nº 1
 Cofla va a una tienda a comprarse un celular, de todos los modelos de la tienda a Cofla el llamaron la atención 3 modelos espcíficamente. El problema es que ningún vendedor sabe mada... por lo que tendremos que ayudar a Cofla a elegir un celular mostrandole las caracterisicas de cada uno.
 - Crear un sistema para mostrarle a Cofla las particularidades de los 3 celulares.
 - Cada celular debe tener color, peso, resolución de pantalla, resolución de cámara y memoria ram.
@@ -947,12 +947,12 @@ Los Métodos Accesores no modifican el Array original, sino que **crean un nuevo
 - **LOG2E**: Logaritmo de E con base 2, aproximadamente 1.443
 - **LOG10E**: Logaritmo de E con base 10, aproximadamente 0.434
 
-### PROBLEMA DE COFLA CAPITULO 4:
-#### PROBLEMA Nº 1
+## PROBLEMA DE COFLA CAPITULO 4:
+### PROBLEMA Nº 1
 Cofla ya está terminando el primer semestre del primer ciclo, la tarea que debe realizar es mucho más avanzada de la que tenía antes, además de suma, resta, multiplicaicón y división, ahora también necesitará calcular las potencias, raices cuadradras y cúbicas.
 - Perfeccionar calculadora para poder implementar las nuevas funciones. 
 
-#### PROBLEMA Nº 2
+### PROBLEMA Nº 2
 La facultad de Cofla está por comenzar y las 12 materisa de la carrera tienen asignado un profesor y todos los alumnos que se anotaron.
 - Crear una funcion que al pasarle como parámetro la materia nos devuelva:
     - Profesor asignado
@@ -960,7 +960,7 @@ La facultad de Cofla está por comenzar y las 12 materisa de la carrera tienen a
 - Crear una función que nos diga en cuantas clases está inscrito Cofla.
 - Nombrar las clases en las que está y los profesores que las imparten.
 
-#### PROBLEMA Nº 3
+### PROBLEMA Nº 3
 Cofla ya vió las 12 materias y se decidió en cual se va a inscribir, el problema es que se rompió el sistema de inscripciones.
 - Crear una función para preguntarle a Cofla en que materia se quiere inscribir.
 - Si ya hay 20 alumnos anotados en la materia negarle la inscripción.
@@ -1015,8 +1015,8 @@ Estas funciones nos permiten cuanto tiempo se demora un usuario en realizar una 
 ```js
     console.log("%crancio", "color:red;background:black;padding:20px;border: 3px solid blue;");
 ```
-### PROBLEMA DE COFLA CAPITULO 5:
-#### PROBLEMA Nº 1
+## PROBLEMA DE COFLA CAPITULO 5:
+### PROBLEMA Nº 1
 Terminó el primer semestre y Cofla no sabe si aprobará o no las materias, para lograrlo necesitará:
 Contar con al menos el 90% de asistencia.
 El promedio por materia debe ser de al menos 7 / 10.
@@ -1025,7 +1025,7 @@ Debe tener al menos el 75% de los trabajos prácticos entregados.
 - Mostrar todo esto con colores representativos en consola (ej: aprobado en verde)
 - Todo estructurado como Tabla
 
-#### PROBLEMA Nº 2
+### PROBLEMA Nº 2
 Cofla está sufriendo un poco... a pesar de que cree contar con el 90% de asistencias y tener un promedio mayor al 70%, no cree poder entregar el 75% de trabajos practicos, ya que necesita dividir las tareas que hará semanalmente, Cofla debe trabajar 8 horas por dia durante 2 semanas entre las cuales tiene que:
 estudiar 24 horas
 24 horas para hacer trabajos
@@ -1528,8 +1528,6 @@ Para este apartado utilizaremos el siguiente código HTML.
     <body>
         <div class="contenedor">
             <h2 class="h2">un h2 común</h2>
-            <h4>un h4 común</h4>
-            <p>Un simple párrafo</p>
         </div>
     </body>
 ```
@@ -1562,3 +1560,95 @@ contenedor.replaceChild(h2_nuevo, h2_antiguo); //Reemplazamos el h2_antiguo por 
         document.write("El elemento NO tiene hijos");
     }
 ``` 
+### Métodos de Parents
+Para este apartado utilizaremos el siguiente código HTML.
+```html
+    <body>
+        <div class="contenedor">
+            <h2 class="h2">un h2 común</h2>
+        </div>
+    </body>
+```
+
+- **parentElement**: propiedad de un Elemento Hijo que nos devuelve su Elemento HTML Padre.
+```js
+    const h2_antiguo = document.querySelector(".h2");
+    let respuesta = h2_antiguo.parentElement; //Seleccionamos el Elemento Padre de *h2_antiguo*
+
+    console.log(respuesta); // Devuelve div class="contenedor"> ...</div> Con todo su contenido
+``` 
+- **parentNode**: propiedad de un Elemento Hijo que nos devuelve su Node Padre, que en casos muy específicos puede NO ser un Elemento HTML.
+```js
+    const h2_antiguo = document.querySelector(".h2");
+    let respuesta = h2_antiguo.parentNode; //Seleccionamos el Node Padre de *h2_antiguo*
+
+    console.log(respuesta); // Devuelve div class="contenedor"> ...</div> Con todo su contenido, ya que en este caso el Node Padre es un Elemento HTML
+``` 
+
+### Propiedades de Siblings (Hermanos)
+Para este apartado utilizaremos el siguiente código HTML.
+```html
+    <body>
+        <div class="contenedor">
+            <h2 class="h2">un h2 común</h2>
+            <h4>un h4 común</h4>
+            <p>Un simple parrafo</p>
+        </div>
+    </body>
+```
+Los **Nodos hermanos** son todos los elementos que coinciden como Hijos de un Elemento Padre
+- **nextSibling**: Obtiene el siguiente Node hermano, siendo este un **Node Element** o no.
+```js
+    const h2_antiguo = document.querySelector(".h2");
+    let respuesta = h2_antiguo.nextSibling; //Seleccionamos el siguiente elemento Hermando
+
+    console.log(respuesta); //Nos devuelve #text, debido a que hay un espacio entre el siguiente Node Element
+``` 
+- **previousSibling**: Obtiene el anterior Node hermano, siendo este un **Node Element** o no.
+```js
+    const h2_antiguo = document.querySelector(".h2");
+    let respuesta = h2_antiguo.previousSibling; //Seleccionamos el anterior elemento Hermando
+
+    console.log(respuesta); //Nos devuelve #text, debido a que tambien hay un espacio antes del Node Element que estamos seleccionando.
+``` 
+- **nextElementSibling**: Obtiene el siguiente **Node Element** 
+```js
+    const h2_antiguo = document.querySelector(".h2");
+    let respuesta = h2_antiguo.nextElementSibling; //Seleccionamos el siguiente Node Element Hermano
+
+    console.log(respuesta); // <h4>un h4 común</h4>, ahora si devuelve el h4
+``` 
+- **previousElementSibling**: Obtiene el anterior **Node Element** 
+```js
+    const h2_antiguo = document.querySelector(".h2");
+    let respuesta = h2_antiguo.previousElementSibling; //Seleccionamos el anterior Node Element Hermano
+
+    console.log(respuesta); // devuelve Null, debido a que no tiene un Node Element Hermano Previo
+``` 
+
+### closest()
+Para este apartado utilizaremos el siguiente código HTML.
+```html
+    <body>
+        <div class="div">
+            DIV 1
+            <div class="div">
+                DIV 2
+                <div class="div-3">
+                    DIV 3
+                </div>
+            </div>
+        </div>
+    </body>
+```
+
+- **closest()**: Selecciona el elemento Ascendente más cercano que coincida con nuestro selector.
+```js
+    const div3 = document.querySelector(".div-3");
+    let respuesta = div3.closest(".div");
+    console.log(respuesta); //Nos devuelve el DIV 2 
+``` 
+## PROBLEMA DE COFLA CAPITULO 6:
+### PROBLEMA Nº 1
+Cofla se quedó encerrado en su casa porque se le rompió la llave, pero necesita ir urgente a la facultad porque no puede faltar ni una sola vez más si quiere aprobar las materias que le faltan, entonces siene que llamar a un cerrajero y pedirle que triaga la llave indciada, no hay tiempo suficiente como para que el cerrajero vea cual es la llave correcta, solo puede traer una y probar. 
+Crear sistema que le muestre a Cofla las 20 llaves posibles, Cofla debe seleccionar cual llave elegir, una vez que Cofla seleccionó la llave, envia los datos al servidor, donde otro programador se encargará del resto.

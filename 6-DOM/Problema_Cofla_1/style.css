@@ -1,0 +1,50 @@
+.flex-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: sans-serif;
+}
+.flex-item{
+    flex-grow: 1;
+    margin: 20px;
+    max-width: 150px;
+    border: 2px solid #333;
+    padding: 20px 20px 0;
+}
+.flex-item:hover{
+    border-color: seagreen;
+    box-shadow: 0 0 22px seagreen;
+}
+.flex-item:focus{
+    border-color: seagreen;
+    box-shadow: 0 0 22px seagreen;
+}
+
+h2,h3{
+    margin: 0;
+}
+
+h3 {
+    color: salmon;
+}
+
+p b{
+    color: seagreen;
+}
+
+.llave-img{
+    width: 150px;
+}
+form {
+    text-align: center;
+    padding: 50px;
+}
+input[type="submit"]{
+    background: seagreen;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 12px 20px;
+    font-size: 18px;
+    letter-spacing: 1px;
+}

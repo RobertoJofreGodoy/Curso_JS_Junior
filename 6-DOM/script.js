@@ -1,20 +1,9 @@
-
-const listaItem = document.createTextNode("Este es un Item de la Lista"); 
-
-
-const contenedor = document.querySelector(".contenedor");
-const fragmento = document.createDocumentFragment();
-
-for (i =0 ; i < 20 ; i++){
-    const lista = document.createElement("LI");
-    lista.innerHTML = "Este es un Item de la Lista"
-    fragmento.appendChild(lista); 
-}
-
-contenedor.appendChild(fragmento);
- 
+const div3 = document.querySelector(".div-3");
 
 
+let respuesta = div3.closest(".div");
+
+console.log(respuesta);
 
 /* 
 ```html
