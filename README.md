@@ -1400,5 +1400,51 @@ Para estos Métodos utilizaremos el siguiente HTML:
     contenedor.appendChild(lista); //Ahora podemos hacer lo mismo con el elemento *contenedor*, que recordemos es el <div> creado en el HTML, por lo que será el Padre, y *lista* su Hijo. 
     // Y de esta manera, creamos un Node Element Li con un Node Text de contenido y lo agregamos al Div, por lo que lo vemos reflejado en pantalla
 ``` 
+```js
+    //También eciste la posibilidad de añadir un texto a la lista con el siguiente método
 
-- **createDocumentFragment()**:
+    lista.innerHTML = "Este es un tiem de la lista"; //Pero el contenido no sería un Objeto, por lo que no tendría las mismas propiedades que un Text Node
+``` 
+#### ¿Que pasaría si tuviesemos que agregar muchos elementos?**
+```js
+    //¿Funcionaria esto?
+    const contenedor = document.querySelector(".contenedor");
+    const lista = document.createElement("LI");
+    lista.innerHTML = "Este es un Item de la Lista"
+
+    for (i =0 ; i < 20 ; i++){
+        contenedor.appendChild(lista); 
+    }
+``` 
+**NO**, debido a que "lista" es UN elemento, y **UN elemento no puede ser agregado 2 veces** , un elemento es un Objeto y como es un Objeto, tiene **identificadores que lo hacen único** y no podemos agregar un elemento único 2 veces.
+
+#### Bueno, entonces coloquemos todo dentro del ciclo for:
+```js
+    //¿Funcionaria esto?
+    const contenedor = document.querySelector(".contenedor");
+
+    for (i =0 ; i < 20 ; i++){
+        const lista = document.createElement("LI");
+        lista.innerHTML = "Este es un Item de la Lista"
+        contenedor.appendChild(lista); 
+    }
+``` 
+**SI, PEEERO**, tenemos un problema gigante de **rendimiento**, debido a que cuando modificamos el DOM, el DOM no agrega los nuevos elementos sobre lo que ya existia, **el DOM ELIMINA TODO y lo VUELVE A ESCRIBIR** con el elemento nuevo ya puesto, por lo tanto, con el código anterior, el DOM está eliminando todo y creando todo 20 veces. 
+Entonces ¿Como lo hacemos para no afectar al rendimiento? veamos el siguiente método...
+
+- **createDocumentFragment()**: es un método que nos permite crear un **Node Object Imaginario**, con todas ls propiedades y métodos de un Node Object.
+Por lo que podemos extraer partes del documento y modificar, añadir o eliminar algún contendio e insertarlo nuevamente al documento.
+
+```js
+    const contenedor = document.querySelector(".contenedor");
+    const fragmento = document.createDocumentFragment(); //Creamos nuestro Node Object Imaginario
+
+    for (i =0 ; i < 20 ; i++){
+        const lista = document.createElement("LI");
+        lista.innerHTML = "Este es un Item de la Lista"
+        fragmento.appendChild(lista); //Le pasamos como Hijos nuestras listas, y las irá almacenando como un elemento Padre
+    }
+
+    contenedor.appendChild(fragmento); //Ahora le pasamos al *contenedor* todo el contenido de *fragmento*, y el DOM solo se recarga 1 vez
+``` 
+Con esto evitamos el consumo excesivo de recursos
