@@ -1,10 +1,8 @@
 # Documentación del Curso de JAVASCRIPT desde CERO (Completo) - Nivel JUNIOR de Soy Dalto
 
-[Video Youtube](https://www.youtube.com/watch?v=z95mZVUcJ-E&t=17383s&ab_channel=SoyDalto
+- [Video Youtube](https://www.youtube.com/watch?v=z95mZVUcJ-E&t=17383s&ab_channel=SoyDalto
 )
-Los Problemas de Cofla están resueltos por mi, si quieren ver las solciones de dalto:
-
-[GitHub Dalto](https://github.com/soydalto/curso-de-javascript
+- Los Problemas de Cofla están resueltos por mi, si quieren ver las soluciones de dalto: [GitHub Dalto](https://github.com/soydalto/curso-de-javascript
 )
 # Curso_JS_Junior
 ¿Que es JavaScript?
