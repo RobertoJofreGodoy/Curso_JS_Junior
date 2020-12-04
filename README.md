@@ -1521,8 +1521,44 @@ Para que <h2> fuera el primer hijo de <div>, tendría que estar de la siguiente 
         console.log(hijo);
     }
 ``` 
-### Métodos de Childs
 
-- **replaceChild()**:
-- **removeChild()**:
-- **hasChildNodes()**:
+### Métodos de Childs
+Para este apartado utilizaremos el siguiente código HTML.
+```html
+    <body>
+        <div class="contenedor">
+            <h2 class="h2">un h2 común</h2>
+            <h4>un h4 común</h4>
+            <p>Un simple párrafo</p>
+        </div>
+    </body>
+```
+
+- **replaceChild()**: Método que nos permite reemplazar un elemento por otro, este admite 2 parámetros *(**element1**, **element2**)*, donde element 1 es el Elemento Nuevo, y el element 2 es el Elemento al que vamos a reemplazar 
+```js
+const contenedor = document.querySelector(".contenedor");
+
+const h2_nuevo = document.createElement("H2"); //Creamos un Node Element Heading HTML Object
+h2_nuevo.innerHTML = "un h2 Nuevo"; //Le indicamos el Texto que debe contener la etiqueta HTML.
+
+const h2_antiguo = document.querySelector(".h2"); //Seleccionamos el h2 existente en el HTML
+
+contenedor.replaceChild(h2_nuevo, h2_antiguo); //Reemplazamos el h2_antiguo por el h2_nuevo dentro del *contenedor*
+``` 
+- **removeChild()**: Método que nos permite Eliminar un elemento hijo del Elemento Padre.
+```js
+    const contenedor = document.querySelector(".contenedor");
+    const h2_antiguo = document.querySelector(".h2");
+    contenedor.removeChild(h2_antiguo); //Eliminamos el Elemento del *contenedor*
+``` 
+- **hasChildNodes()**: Método para verificar si tiene un elemento Hijo o no, esto devuelve **true** o **false**
+```js
+    const contenedor = document.querySelector(".contenedor");
+    let respuesta = contenedor.hasChildNodes(); //¿Tiene hijos?
+
+    if (respuesta) {
+        document.write("El elemento tiene hijos");
+    } else {
+        document.write("El elemento NO tiene hijos");
+    }
+``` 
