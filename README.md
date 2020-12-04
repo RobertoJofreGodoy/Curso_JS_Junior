@@ -1327,12 +1327,12 @@ document.write(valorReplace); //true
 - **outerHTML**: devuelve el código HTML completo del elemento, por lo tanto, tener en cuenta de que al momento de mostrarlo en pantalla, el navegador lo va a interpretar.
 ```js
     const titulo = document.querySelector(".titulo");
-    let resultado = titulo.innerHTML;
+    let resultado = titulo.outerHTML;
     document.write(resultado); // devuelve "<p class="titulo">Elemento a <b>Modificar</b></p>" y el navegador interpreta todo
 
 
     const titulo2 = document.querySelector(".titulo2");
-    let resultado2 = titulo2.innerHTML;
+    let resultado2 = titulo2.outerHTML;
     alert(resultado2); // devuelve "<p class="titulo2">Elemento a <b hidden ="">Modificar</b></p>"
     //vemos el contenido completo, incluyendo el HTML de la etiqueta
 ``` 
@@ -1384,8 +1384,8 @@ Para estos Métodos utilizaremos el siguiente HTML:
     console.log(listaItem); // "Este es un Item de la Lista"
 
     //Tenemos un Node Element Li llamado *lista* y un Node Text llamado *listaItem*
-    // Pero están por separado
-    // ¿Cómo hacemos para colocar un Nodo dentro de otro Nodo?
+    //Pero están por separado.
+    //¿Cómo hacemos para colocar un Nodo dentro de otro Nodo?
 
     lista.innerHTML = listaItem; //¿Tiene sentido hacer esto?
     console.log(lista); //<li>[object Text]</li> 
@@ -1401,11 +1401,11 @@ Para estos Métodos utilizaremos el siguiente HTML:
     // Y de esta manera, creamos un Node Element Li con un Node Text de contenido y lo agregamos al Div, por lo que lo vemos reflejado en pantalla
 ``` 
 ```js
-    //También eciste la posibilidad de añadir un texto a la lista con el siguiente método
+    //También existe la posibilidad de añadir un texto a la lista con el siguiente método
 
     lista.innerHTML = "Este es un tiem de la lista"; //Pero el contenido no sería un Objeto, por lo que no tendría las mismas propiedades que un Text Node
 ``` 
-#### ¿Que pasaría si tuviesemos que agregar muchos elementos?**
+#### ¿Que pasaría si tuviesemos que agregar muchos elementos?
 ```js
     //¿Funcionaria esto?
     const contenedor = document.querySelector(".contenedor");
@@ -1433,7 +1433,7 @@ Para estos Métodos utilizaremos el siguiente HTML:
 Entonces ¿Como lo hacemos para no afectar al rendimiento? veamos el siguiente método...
 
 - **createDocumentFragment()**: es un método que nos permite crear un **Node Object Imaginario**, con todas ls propiedades y métodos de un Node Object.
-Por lo que podemos extraer partes del documento y modificar, añadir o eliminar algún contendio e insertarlo nuevamente al documento.
+Por lo que podemos extraer partes del documento y modificar, añadir o eliminar algún contenido e insertarlo nuevamente al documento.
 
 ```js
     const contenedor = document.querySelector(".contenedor");
