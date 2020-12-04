@@ -1448,3 +1448,81 @@ Por lo que podemos extraer partes del documento y modificar, añadir o eliminar 
     contenedor.appendChild(fragmento); //Ahora le pasamos al *contenedor* todo el contenido de *fragmento*, y el DOM solo se recarga 1 vez
 ``` 
 Con esto evitamos el consumo excesivo de recursos
+
+### Obtención de Childs
+Para este apartado utilizaremos el siguiente código HTML.
+```html
+    <body>
+        <div class="contenedor">
+            <h2>un h2 común</h2>
+            <h4>un h4 común</h4>
+            <p>Un simple párrafo</p>
+        </div>
+    </body>
+```
+Propiedades:
+- **firstChild**: Obtiene el primer hijo del elemento que le indiquemos
+```js
+    const contenedor = document.querySelector(".contenedor");
+
+    const primerHijo = contenedor.firstChild; //Almacenamos el primer hijo de contenedor
+
+    console.log(primerHijo);// nos retorna: #text, y no el h2 que queriamos.
+    //¿a qué se debe esto?
+``` 
+Si vemos el código HTML podemos ver que la etquieta <h2> no está exactamente a continuación del <div>, sino que hay un espacio en blanco que los separa, ese espacio en blanco es un **Text Node**, por lo tanto es el primer hijo de <div>
+```html
+        <div class="contenedor">
+<!-- text--><h2>un h2 común</h2> 
+        </div>
+```
+Para que <h2> fuera el primer hijo de <div>, tendría que estar de la siguiente manera:
+```html
+        <div class="contenedor"><h2>un h2 común</h2> 
+        </div>
+```
+- **lastChild**: Obtiene el último hijo del elemento que le indiquemos:
+```js
+    const contenedor = document.querySelector(".contenedor");
+    const ultimoHijo = contenedor.lastChild; //Almacenamos el último hijo de contenedor
+    console.log(ultimoHijo); //Y nos devuelve #text nuevamente, debido a que ocurre lo mismo que con *firstChild*
+    //El último parráfo del HTML no está exactamente pegado al cierre de la etiqueta <div>, por lo tanto hay texto entre ambos elementos
+``` 
+- **firstElementChild**: Obtiene el primer **Elemento** hijo ignorando los **Text Node** que puedan existir entremedio
+```js
+    const contenedor = document.querySelector(".contenedor");
+    const primerHijo = contenedor.firstElementChild;
+    console.log(primerHijo); //Nos devuelve <h2>un h2 común</h2>
+``` 
+- **lastElementChild**: Obtiene el último **Elemento** hijo ignorando los **Text Node** que puedan existir entremedio
+```js
+    const contenedor = document.querySelector(".contenedor");
+    const ultimoHijo = contenedor.lastElementChild;
+    console.log(ultimoHijo); //Nos devuelve <p>Un simple parrafo</p>
+``` 
+- **childNodes**: Nos devuelve **TODOS** los Nodos Hijos, **NOTA**: el resultado **NO ES UN ARRAY**, es un **Node List**
+```js
+    const contenedor = document.querySelector(".contenedor");
+    const hijos = contenedor.childNodes;
+    console.log(hijos); //NodeList(7) [text, h2, text, h4, text, p, text]
+    console.log(hijos[1]); // Accedemos la segundo Nodo <h2>un h2 común</h2>
+
+    hijos.forEach(hijo => console.log(hijo)); //Como es un Objeto, podemos recorrerlo con forEach
+``` 
+- **children**: Nos devuelve solamente los **Node Elements** hijos.
+```js
+    const contenedor = document.querySelector(".contenedor");
+    const hijos = contenedor.children;
+    console.log(hijos); //HTMLCollection(3) [h2, h4, p]
+
+    console.log(hijos[1]); //<h4>un h4 común</h4>
+
+    for (hijo of hijos){ //recorremos y mostramos cada elemento.
+        console.log(hijo);
+    }
+``` 
+### Métodos de Childs
+
+- **replaceChild()**:
+- **removeChild()**:
+- **hasChildNodes()**:
