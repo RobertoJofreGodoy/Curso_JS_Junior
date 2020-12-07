@@ -32,7 +32,7 @@ Otros usos no tan comunes:
 Una variable es un espacio que guardamos en memoria
 
 Podemos declarar una variable de 3 maneras diferentes:
-- **var**: definimos una variable y esta se puede utilizar en cualquier momento, se recomienda no utilizar debido a su amplio Scope.
+- **var**: definimos una variable y esta se puede utilizar en cualquier momento, se recomienda no utilizar debido a su amplio *Scope*.
 - **let**: declara una variable que se encuentra limitada a su bloque, es una variable regional. 
  NOTA: No es lo mismo **Declarar** una variable o **Inicializar** una variable, podemos declarar una variable de la siguiente manera:
     *let numero;*   -> estamos indicando que existe una variable con un alcanze regional (al ser let)
@@ -50,7 +50,7 @@ Podemos declarar una variable de 3 maneras diferentes:
 Casos especiales de Datos donde la variable no esta definida o hay un error:
  - **Undefined**: tipo de dato que retorna cuando una variable existe pero no esta Inicializada.
  - **Null**: es un valor vacio o nulo.
- - **Nan**: *'Not a Number'* valor que nos devuelve JS cuando intentamos realizar alguna operación matemática con variables que no son un numero
+ - **Nan**: *'Not a Number'* valor que nos devuelve JS cuando intentamos realizar alguna operación matemática con variables que no son un número
 
 ## SCOPE: 
 El scope de una variable hace referencia al lugar donde esta va a vivir , o podrá ser accesible. Podríamos decir también que **Scope** es el alcance que determina la accesibilidad de las variables en cada parte de nuestro código.
@@ -103,7 +103,7 @@ Los **operadores de comparación** comparan dos expresiones y devuelven un valor
  Equiality:               x == y      significa: si x es igual a y es true, sino false
  Inequiality:             x != y      significa: si x no es igual a y es true, sino false
  Identity:                x === y     significa: si x es estrictamenteigual a y es true, sino false
- Non-identity:            x !== y     significa: si x no es estrictamenteigual a y es flase, sino true
+ Non-identity:            x !== y     significa: si x es estrictamenteigual a y es false, sino true
  Greater than:            x > y       significa: si x es mayor que y es true, sino false
  Grater than or equal:    x >= y      significa: si x es mayor o igual que y es true, sino false
  Less than:               x < y       significa: si x es menor que y es true, sino false
@@ -474,7 +474,8 @@ Dentro del **constructor** utilizaremos la palabra reservada **this** que hace r
     }
 ```
 Ahora, podemos construir diferentes Animales con los **Atributos** que indicamos en la **Clase**.
-Nota: Los objetos idealmente deben ser creados como **Constantes**.
+
+**Nota**: Los objetos deben ser creados como **Constantes**.
 ```js
     const perro = new animal("Quiltro", 5, "negro");
     const gato = new animal("gato", 7, "blanco");
@@ -801,7 +802,7 @@ Los Transformadores son **métodos que modifican el Array**.
     document.write(nombres); //Vemos el Array invertido
 ```
 - **sort()**: Método que ordena los elementos de un Array localmente y devuelve el arreglo ordenado. Se basa en el orden lexicográfico.
-**NOTA**: Solo tiene en cuenta el primer carácter de los números, ejemplo, si tenemos *let numero = [ 1,45,5,74,98 ]* el método *sort* ordenará los numero de la siguiente manera: *[ 1,45,5,74,98 ]*
+**NOTA**: Solo tiene en cuenta el primer carácter de los números, ejemplo, si tenemos *let numero = [1,4,9,7,26,63,88 ]* el método *sort* ordenará los numero de la siguiente manera: *[ 1,26,4,63,7,88,9 ]*
 ```js
     let nombres = ["Zuloko","Roberto", "karina", "Mona","Andrea"];
     let numeros = [5,7,2,4,9,1,5,2,6];
@@ -840,8 +841,8 @@ Los Métodos Accesores no modifican el Array original, sino que **crean un nuevo
 ```
 - **slice()**: Método que devuelve una parte del Array dentro de un nuevo Array. Podriamos decir que copia una parte del Array Original.
     Para ello el método **slice()** nos permite pasarle 2 parámetros:
-    - 1er parámetro: El índice del Array original desde el cual iniciará la copia
-    - 2do parámetro: El índice del Array original en el que dejará de copiar (este ultimo elemento no se incluye en la copia)
+    - **1er parámetro**: El índice del Array original desde el cual iniciará la copia
+    - **2do parámetro**: El índice del Array original en el que dejará de copiar (este ultimo elemento no se incluye en la copia)
 ```js
     let nombres = ["Roberto", "karina", "Mona", "Emy", "Nico"];
     let resultado = nombres.slice(1,4); //Creamos el Array "resultado" con los elementos desde el indice 1 hasta 4 (excluyendo este ultimo) del Array "nombres"
@@ -1044,12 +1045,13 @@ estudiar 24 horas
 
 # Capitulo 6: DOM
 ## Definición
-DOM: document Object Model, es la interfaz que contiene todos los objetos estandares que nos permiten represnetar todos los elementos html, xml o xhtml, que a su vez tiene otra interfaz que nos permite decir que cosa combina con cada cosa y otra que nos permite trabajar con un lenguaje como JavaScript.
+**DOM**: **document Object Model**, es la interfaz que contiene todos los objetos estandares que nos permiten representar todos los elementos *html, xml o xhtml*, que a su vez tiene otra interfaz que nos permite decir que cosa combina con cada cosa y otra que nos permite trabajar con un lenguaje como JavaScript.
 Es el documento en sí que contiene todos los elementos.
 
 ## Nodo
 Un nodo en el **DOM** es cualquier *etiqueta* del cuerpo, como un párrafo, el mismo body o incluso las etiquetas de una lista.
-**NOTA**: no siempre son etiquetas, pero eso lo veremos más adelante.
+
+**NOTA**: no siempre son etiquetas:
 Existen varios tipos de **Nodos**:
 ### Tipos de Nodos
 - **Document**: El nodo document es el nodo raíz, a partir del cual derivan el resto de nodos.
@@ -1059,7 +1061,7 @@ Existen varios tipos de **Nodos**:
 - **Comentarios y otros**: Los comentarios y otros elementos como las declaraciones doctype en cabecera de los elementos HTML generan nodos.
 
 ### Métodos de Selección de Elementos
-Recordemos que los métodos se aplican a Objetos, para estos metodos, el Objeto sería "document"
+Recordemos que los métodos se aplican a Objetos, para estos métodos, el Objeto sería "document"
 - **getElementById()**: Selecciona un Elemento por ID.
 ```html
     <body>
@@ -1229,7 +1231,9 @@ Podemos acceder y modificar los atributos desde el Objeto, como propiedades.
 
 ### Atributo Style
 Nos permite modificar el CSS del Atributo.
-**NOTA**: tener en cuenta que en JS se deben escribir las propiedades con **camelCase**
+
+**NOTA**: tener en cuenta que en JS se deben escribir las propiedades con **camelCase**.
+
 Ejemplo: **CSS**: *background-color*  => **JS**: *backgroundColor*
 ```html
    <body>
@@ -1245,6 +1249,7 @@ Ejemplo: **CSS**: *background-color*  => **JS**: *backgroundColor*
 
 ## ClassList
 Es una particularidad de las Clases de los Objetos.
+
 HTML DE EJEMPLO:
 ```html
    <body>
@@ -1316,7 +1321,7 @@ document.write(valorReplace); //true
     //PERO
     const titulo2 = document.querySelector(".titulo2");
     let resultado2 = titulo2.textContent;
-    document.write(resultado2); //Nos devuelve el texto "Elemento a Modificar" a pesar de que contiene la etiqueta "hidden"
+    document.write(resultado2); //Nos devuelve el texto "Elemento a Modificar" a pesar de que contiene el atributo "hidden"
 ``` 
 - **innerHTML**: devuelve el contenido HTML de un elemento, por lo tanto, tener en cuenta de que al momento de mostrarlo en pantalla, el navegador lo va a interpretar.
 ```js
@@ -1379,7 +1384,7 @@ Para estos Métodos utilizaremos el siguiente HTML:
     document.write(lista); // [object HTMLLIElement] vemos que efectivamente tenemos un nuevo Nodo Element Li HTMl como Objeto, pero de momento no hemos hecho nada más que mostrar que existe.
     console.log(lista); //En Consola podemos ver <li></li>
 ``` 
-- **createTextNode()**: Método que nos permite crear un **Node text** dentro de un **Node element** 
+- **createTextNode()**: Método que nos permite crear un **Node text** dentro de un **Node element**.
 ```js
     const contenedor = document.querySelector(".contenedor");
     const lista = document.createElement("LI");
@@ -1399,7 +1404,7 @@ Para estos Métodos utilizaremos el siguiente HTML:
 
     //Para ello utilizaremos el siguiente Método:
 ``` 
-- **appendChild()**: Métodos que se aplican a los **elementos Padre** pero que toma como parámetro un **elemento Hijo**
+- **appendChild()**: Métodos que se aplican a los **elementos Padre** pero que toma como parámetro un **elemento Hijo**.
 ```js
     lista.appendChild(listaItem); //*lista* es el elemento Padre al que le pasamos como parámetro el elemento *listaItem* que será el Hijo
 
@@ -1409,7 +1414,7 @@ Para estos Métodos utilizaremos el siguiente HTML:
 ```js
     //También existe la posibilidad de añadir un texto a la lista con el siguiente método
 
-    lista.innerHTML = "Este es un tiem de la lista"; //Pero el contenido no sería un Objeto, por lo que no tendría las mismas propiedades que un Text Node
+    lista.innerHTML = "Este es un item de la lista"; //Pero el contenido no sería un Objeto, por lo que no tendría las mismas propiedades que un Text Node
 ``` 
 #### ¿Que pasaría si tuviesemos que agregar muchos elementos?
 ```js
@@ -1435,10 +1440,10 @@ Para estos Métodos utilizaremos el siguiente HTML:
         contenedor.appendChild(lista); 
     }
 ``` 
-**SI, PEEERO**, tenemos un problema gigante de **rendimiento**, debido a que cuando modificamos el DOM, el DOM no agrega los nuevos elementos sobre lo que ya existia, **el DOM ELIMINA TODO y lo VUELVE A ESCRIBIR** con el elemento nuevo ya puesto, por lo tanto, con el código anterior, el DOM está eliminando todo y creando todo 20 veces. 
-Entonces ¿Como lo hacemos para no afectar al rendimiento? veamos el siguiente método...
+**SI, PEEERO**, tenemos un problema gigante de **rendimiento**, debido a que cuando modificamos el **DOM**, el DOM no agrega los nuevos elementos sobre lo que ya existia, **el DOM ELIMINA TODO y lo VUELVE A ESCRIBIR** con el elemento nuevo ya puesto, por lo tanto, con el código anterior, el DOM está eliminando todo y creando todo 20 veces. 
+Entonces **¿Como lo hacemos para no afectar al rendimiento?** veamos el siguiente método...
 
-- **createDocumentFragment()**: es un método que nos permite crear un **Node Object Imaginario**, con todas ls propiedades y métodos de un Node Object.
+- **createDocumentFragment()**: es un método que nos permite crear un **Node Object Imaginario**, con todas las propiedades y métodos de un **Node Object**.
 Por lo que podemos extraer partes del documento y modificar, añadir o eliminar algún contenido e insertarlo nuevamente al documento.
 
 ```js

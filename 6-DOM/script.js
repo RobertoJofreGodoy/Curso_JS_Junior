@@ -1,11 +1,8 @@
-const div3 = document.querySelector(".div-3");
+let numeros =[1,4,9,7,26,63,88];
+numeros.sort();
+document.write(numeros);
 
-
-let respuesta = div3.closest(".div");
-
-console.log(respuesta);
-
-/* 
+/*
 ```html
    
 ```
