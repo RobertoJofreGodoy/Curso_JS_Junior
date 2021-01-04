@@ -231,6 +231,9 @@ ejemplo:
 En este caso, creamos un objeto *computer* que tiene las propiedades *cpu, gpu, ram, ssd y os*, esto nos permite llamar una propiedad en específico del objeto, sin tener que conocer su posición exacta:
 ```javascript
     document.write(computer["gpu"]);
+    //o
+    document.write(computer.cpu); 
+    //Ambas opciones nos devuelve el contenido
 ```
 
 ## Bucles de Iteración
@@ -428,6 +431,8 @@ Las Arrow Function tienen varias ventajas:
     //VS
     const saludarArrow = nombre => `Hola ${nombre}!`;
 ```
+Pero también desventajas:
+- No se pueden utilizar para crear métodos de clases, devido a que para las Arrow function **this** es el elemento que contiene a la función y no la clase.
 
 ## PROBLEMA DE COFLA CAPITULO 2:
 ### PROBLEMA Nº 1
@@ -856,18 +861,25 @@ Los Métodos Accesores no modifican el Array original, sino que **crean un nuevo
     let resultado2 = nombres.toString(); //convierte el Array en un String
     let resultado3 = nombres.indexOf("Emy"); //Devuelve 3 que es el indice.
 ```
-### De Repetición
+### De Iteración
 - **forEach()**: Ejecuta la función indicada una vez por cada elemento del Array
 ```js
     let nombres = ["Roberto", "karina", "Mona", "Emy", "Nico"];
     nombres.forEach(nombre => document.write(nombre + `<br>`)); //recorremos todos los elementos del Array y nos permite ejecutar una función con cada uno de los elementos.
 ```
-
-- **filter()**: Crea un nuevo Array con todos los elementos que cumplan una condición.
+- **map()**: Método que crea un nuevo Array ejecutando una función por cada elemento del Array ooriginal.<br>
+El método **map()** no ejecuta la función a elementos vacios del Array.
+El método **map()** no modifica el Array original.
 ```js
     let nombres = ["Roberto", "karina", "Mona", "Emy", "Nico"];
+    let nombresMayuscula = nombres.map(nombre => nombre.toUpperCase());
 
-    let resultado = nombres.filter(nombre => nombre.length > 4); /* filter() nos permite crear una funcion en su interior 
+```
+
+- **filter()**: Crea un nuevo Array con todos los elementos que cumplan una condición. 
+```js
+    let nombres = ["Roberto", "karina", "Mona", "Emy", "Nico"];
+    let resultado = nombres.filter(nombre => nombre.length > 4); /* filter() nos permite ejecutar una funcion en su interior 
     que recorre los elementos del Array, y que además nos permite indicarle una condición, por lo que, 
     en este caso "resultado" solo almacenará los elementos del Array "nombres" que contengan más de 4 carácteres.
     */
